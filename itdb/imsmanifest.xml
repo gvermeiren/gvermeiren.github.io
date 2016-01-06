@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest identifier="_6Lhsdt8VTO1_course_id" version="1.0" xmlns="http://www.imsproject.org/xsd/imscp_rootv1p1p2" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_rootv1p2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsproject.org/xsd/imscp_rootv1p1p2 imscp_rootv1p1p2.xsd http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd http://www.adlnet.org/xsd/adlcp_rootv1p2 adlcp_rootv1p2.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>1.2</schemaversion>
+    <lom xmlns="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.imsglobal.org/xsd/imsmd_rootv1p2p1 imsmd_rootv1p2p1.xsd">
+      <general>
+        <title>
+          <langstring xml:lang="x-none">inleiding tot de boekhouding-V5</langstring>
+        </title>
+      </general>
+      <lifecycle>
+        <version>
+          <langstring xml:lang="x-none">1</langstring>
+        </version>
+        <status>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">Final</langstring>
+          </value>
+        </status>
+      </lifecycle>
+      <metametadata>
+        <metadatascheme>ADL SCORM 1.2</metadatascheme>
+      </metametadata>
+      <educational>
+        <typicallearningtime>
+          <datetime>PT0H0M0S</datetime>
+        </typicallearningtime>
+      </educational>
+      <rights>
+        <cost>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">yes</langstring>
+          </value>
+        </cost>
+        <copyrightandotherrestrictions>
+          <source>
+            <langstring xml:lang="x-none">LOMv1.0</langstring>
+          </source>
+          <value>
+            <langstring xml:lang="x-none">yes</langstring>
+          </value>
+        </copyrightandotherrestrictions>
+      </rights>
+    </lom>
+  </metadata>
+  <organizations default="inleiding_tot_de_boekhouding-V5_ORG">
+    <organization identifier="inleiding_tot_de_boekhouding-V5_ORG">
+      <title>inleiding tot de boekhouding-V5</title>
+      <item identifier="inleiding_tot_de_boekhouding_SCO" isvisible="true" identifierref="__6Lhsdt8VTO1_course_id_RES">
+        <title>inleiding tot de boekhouding</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="__6Lhsdt8VTO1_course_id_RES" type="webcontent" href="index_lms.html" adlcp:scormtype="sco">
+      <file href="story_content/thumbnail.jpg" />
+      <file href="story_content/6fXVP9w2rdz_80_DX1440_DY1440.jpg" />
+      <file href="mobile/6fXVP9w2rdz_80_DX1440_DY1440_CX720_CY540.jpg" />
+      <file href="story_content/video_5Xkjm3XQpzT_22_48_480x360.mp4" />
+      <file href="mobile/video_5Xkjm3XQpzT_22_48_480x360.jpg" />
+      <file href="meta.xml" />
+      <file href="story_content/frame.xml" />
+      <file href="story_content/frame.js" />
+      <file href="story_content/user.js" />
+      <file href="story_content/external_files/Agendabeheer en planning.pdf" />
+      <file href="story_content/external_files/Kantoorapparatuur.pdf" />
+      <file href="story_content/external_files/DE FACTUUR.pdf" />
+      <file href="story_content/external_files/BTW uitrekenen.pdf" />
+      <file href="story_content/external_files/Enkelvoudige interest.pdf" />
+      <file href="story_content/external_files/De regel van drie.pdf" />
+      <file href="story_content/external_files/betaling en inning.pdf" />
+      <file href="story_content/external_files/Klasseermethoden.pdf" />
+      <file href="story_content/external_files/Wat is ergonomie.pdf" />
+      <file href="story_content/external_files/Ergonomie van de werkplek.pdf" />
+      <file href="story_content/external_files/klantenkaart.pdf" />
+      <file href="story_content/external_files/leverancierskaart.pdf" />
+      <file href="mobile/app_store.png" />
+      <file href="mobile/mobile_icon.png" />
+      <file href="mobile/linen_background.jpg" />
+      <file href="story_unsupported.html" />
+      <file href="mobile/player.css" />
+      <file href="mobile/player_compiled.js" />
+      <file href="story_content/FontFactory.swf" />
+      <file href="story_content/fonts.swf" />
+      <file href="story_content/fonts.xml" />
+      <file href="mobile/fonts.js" />
+      <file href="story.swf" />
+      <file href="story_content/frame.swf" />
+      <file href="story_content/slides/6GE7tzPAnOi.swf" />
+      <file href="story_content/slides/6kGIvLUspAP.swf" />
+      <file href="mobile/slides/6GE7tzPAnOi.gz" />
+      <file href="mobile/slides/6kGIvLUspAP.gz" />
+      <file href="story_content/slides/6JFqqSdQmnf.swf" />
+      <file href="story_content/slides/6ZMc3W5dbSP.swf" />
+      <file href="mobile/slides/6JFqqSdQmnf.gz" />
+      <file href="mobile/slides/6kGIvLUspAP.js" />
+      <file href="mobile/slides/6ZMc3W5dbSP.gz" />
+      <file href="mobile/slides/6GE7tzPAnOi.js" />
+      <file href="mobile/slides/6JFqqSdQmnf.js" />
+      <file href="story_content/slides/6THNMJw2x5e.swf" />
+      <file href="mobile/slides/6ZMc3W5dbSP.js" />
+      <file href="story_content/slides/6V3aUBiIdMn.swf" />
+      <file href="mobile/slides/6THNMJw2x5e.gz" />
+      <file href="mobile/slides/6V3aUBiIdMn.gz" />
+      <file href="story_content/slides/6NHunDbFGLF.swf" />
+      <file href="story_content/slides/5wdQ7fYAhjc.swf" />
+      <file href="mobile/slides/6THNMJw2x5e.js" />
+      <file href="mobile/slides/6NHunDbFGLF.gz" />
+      <file href="mobile/slides/6V3aUBiIdMn.js" />
+      <file href="mobile/slides/5wdQ7fYAhjc.gz" />
+      <file href="story_content/slides/6kxOIc7ILlV.swf" />
+      <file href="mobile/slides/6NHunDbFGLF.js" />
+      <file href="mobile/slides/6kxOIc7ILlV.gz" />
+      <file href="mobile/slides/5wdQ7fYAhjc.js" />
+      <file href="story_content/slides/5d7D0Hy8qLd.swf" />
+      <file href="mobile/slides/5d7D0Hy8qLd.gz" />
+      <file href="story_content/slides/622PmSrmCmC.swf" />
+      <file href="mobile/slides/6kxOIc7ILlV.js" />
+      <file href="story_content/slides/5xRNc1RPykO.swf" />
+      <file href="mobile/slides/622PmSrmCmC.gz" />
+      <file href="mobile/slides/5d7D0Hy8qLd.js" />
+      <file href="mobile/slides/5xRNc1RPykO.gz" />
+      <file href="mobile/slides/622PmSrmCmC.js" />
+      <file href="mobile/slides/5xRNc1RPykO.js" />
+      <file href="story_content/data.swf" />
+      <file href="mobile/data.gz" />
+      <file href="mobile/data.js" />
+      <file href="mobile/masks.js" />
+      <file href="story.html" />
+      <file href="story_html5.html" />
+      <file href="index_lms_html5.html" />
+      <file href="story_content/blank.html" />
+      <file href="story_content/story.js" />
+      <file href="amplaunch.html" />
+      <file href="mobile/mobileinstall.html" />
+      <file href="index_lms.html" />
+      <file href="lms/AICCComm.html" />
+      <file href="lms/AICCFunctions.js" />
+      <file href="lms/API.js" />
+      <file href="lms/APIConstants.js" />
+      <file href="lms/blank.html" />
+      <file href="lms/browsersniff.js" />
+      <file href="lms/Configuration.js" />
+      <file href="lms/goodbye.html" />
+      <file href="lms/lms.js" />
+      <file href="lms/LMSAPI.js" />
+      <file href="lms/NONEFunctions.js" />
+      <file href="lms/SCORM2004Functions.js" />
+      <file href="lms/SCORMFunctions.js" />
+      <file href="lms/UtilityFunctions.js" />
+    </resource>
+  </resources>
+</manifest>

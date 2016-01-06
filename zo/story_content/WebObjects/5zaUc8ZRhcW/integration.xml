@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<integration>
+  <devicefont enabled="true" />
+  <nextslide enabled="true" text="Next Storyline Slide" show="complete" />
+</integration>

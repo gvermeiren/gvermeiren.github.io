@@ -1,0 +1,105 @@
+<Interaction Type="Timeline" Title="Timeline" contentfont="Articulate" jpegquality="80" autoplay="false" autoplayduration="5" headingfont="Articulate" navfont="Articulate" soundeffects="true" volumebutton="true" audioquality="low" audiocustombitrate="br112Kbps" audiocustomfrequency="fq12KHz" audiocustomchannel="ccMono" navbuttons="true" forceorder="false" detectflashver="true" animation="bounce" version="2.3.1103.112" borderstyle="round_inset">
+  <timeline>
+    <periods>
+      <period name="Voor opening" percent="22.7752639517345">
+        <color name="Green" valuea="0x99CC00" valueb="0x006600" inner="0x002F00" hovera="0xFFFFFF" hoverb="0x99CC00" />
+      </period>
+      <period name="Openingsuren" percent="50.6787330316742">
+        <color name="Red" valuea="0xDD4809" valueb="0x912020" inner="0x5C1414" hovera="0xFCCFBC" hoverb="0xDD4809" />
+      </period>
+      <period name="Na sluitingstijd" percent="26.5460030165913">
+        <color name="Blue" valuea="0x33CCFF" valueb="0x003399" inner="0x000000" hovera="0x79FFE1" hoverb="0x01A7A7" />
+      </period>
+    </periods>
+    <events>
+      <event percent="1.36484687083888">
+        <color name="Green" valuea="0x99CC00" valueb="0x006600" inner="0x002F00" hovera="0xFFFFFF" hoverb="0x99CC00" />
+      </event>
+      <event percent="11.9840213049268">
+        <color name="Green" valuea="0x99CC00" valueb="0x006600" inner="0x002F00" hovera="0xFFFFFF" hoverb="0x99CC00" />
+      </event>
+      <event percent="21.2669683257919">
+        <color name="Green" valuea="0x99CC00" valueb="0x006600" inner="0x002F00" hovera="0xFFFFFF" hoverb="0x99CC00" />
+      </event>
+      <event percent="24.3589743589744">
+        <color name="Red" valuea="0xDD4809" valueb="0x912020" inner="0x5C1414" hovera="0xFCCFBC" hoverb="0xDD4809" />
+      </event>
+      <event percent="32.2775263951735">
+        <color name="Red" valuea="0xDD4809" valueb="0x912020" inner="0x5C1414" hovera="0xFCCFBC" hoverb="0xDD4809" />
+      </event>
+      <event percent="43.8914027149321">
+        <color name="Red" valuea="0xDD4809" valueb="0x912020" inner="0x5C1414" hovera="0xFCCFBC" hoverb="0xDD4809" />
+      </event>
+      <event percent="54.4494720965309">
+        <color name="Red" valuea="0xDD4809" valueb="0x912020" inner="0x5C1414" hovera="0xFCCFBC" hoverb="0xDD4809" />
+      </event>
+      <event percent="61.4630467571644">
+        <color name="Red" valuea="0xDD4809" valueb="0x912020" inner="0x5C1414" hovera="0xFCCFBC" hoverb="0xDD4809" />
+      </event>
+      <event percent="68.4012066365008">
+        <color name="Red" valuea="0xDD4809" valueb="0x912020" inner="0x5C1414" hovera="0xFCCFBC" hoverb="0xDD4809" />
+      </event>
+      <event percent="72.0965309200603">
+        <color name="Red" valuea="0xDD4809" valueb="0x912020" inner="0x5C1414" hovera="0xFCCFBC" hoverb="0xDD4809" />
+      </event>
+      <event percent="74.2835595776772">
+        <color name="Blue" valuea="0x33CCFF" valueb="0x003399" inner="0x000000" hovera="0x79FFE1" hoverb="0x01A7A7" />
+      </event>
+      <event percent="78.8084464555053">
+        <color name="Blue" valuea="0x33CCFF" valueb="0x003399" inner="0x000000" hovera="0x79FFE1" hoverb="0x01A7A7" />
+      </event>
+      <event percent="85.2187028657617">
+        <color name="Blue" valuea="0x33CCFF" valueb="0x003399" inner="0x000000" hovera="0x79FFE1" hoverb="0x01A7A7" />
+      </event>
+      <event percent="90.2714932126697">
+        <color name="Blue" valuea="0x33CCFF" valueb="0x003399" inner="0x000000" hovera="0x79FFE1" hoverb="0x01A7A7" />
+      </event>
+      <event percent="95.3242835595777">
+        <color name="Blue" valuea="0x33CCFF" valueb="0x003399" inner="0x000000" hovera="0x79FFE1" hoverb="0x01A7A7" />
+      </event>
+      <event percent="98.868778280543">
+        <color name="Blue" valuea="0x33CCFF" valueb="0x003399" inner="0x000000" hovera="0x79FFE1" hoverb="0x01A7A7" />
+      </event>
+    </events>
+  </timeline>
+  <steps>
+    <Step id="c009b2f4-c3f0-4a68-b81e-9ba442faa8b3" name="We lopen een dag mee in De Schoofzak" title="" number="" html="&lt;p align='left'&gt;&lt;font face='Articulate' size='16' color='#000000'&gt;Hieronder zie je het verloop van een normale dag bij &quot;De schoofzak&quot;. Klik op de bolletjes om meer te weten te komen over elke gebeurtenis.&lt;br&gt;&lt;/br&gt;&lt;/font&gt;&lt;/p&gt;" intro="true">
+      <image width="100" height="154" zoomheight="303" playbar="false" autoplay="false" zoomwidth="196" zoommode="Embedded" allowzoom="false" align="top" duration="0" framerate="30" name="image0.jpg" zoomimage="" />
+    </Step>
+    <Step id="dce263d3-39e3-4ca2-9391-ef982e73f98a" name="Voorbereidingen voor de dag" title="" number="" html="&lt;p align='left'&gt;&lt;font face='Articulate' size='16' color='#000000'&gt;Type your event 1 text here.&lt;/font&gt;&lt;/p&gt;">
+    </Step>
+    <Step id="a6586f37-79dd-4b80-8087-5b03464494be" name="Levering van bestellingen door leveranciers" title="" number="" html="&lt;p align='left'&gt;&lt;font face='Articulate' size='16' color='#000000'&gt;Type your event 2 text here.&lt;/font&gt;&lt;/p&gt;">
+    </Step>
+    <Step id="a118ad88-b589-47c4-bf6c-1636707557ab" name="Bestellingen maken" title="" number="" html="&lt;p align='left'&gt;&lt;font face='Articulate' size='16' color='#000000'&gt;Type your event 3 text here.&lt;/font&gt;&lt;/p&gt;">
+    </Step>
+    <Step id="538811cd-c0e7-4a89-81ee-9479d9e6974c" name="Winkel opent om 10u00 door Angelique" title="" number="" html="&lt;p&gt;&lt;font face='Articulate' size='16' color='#000000'&gt; &lt;/font&gt;&lt;br&gt;&lt;/br&gt;&lt;/p&gt;">
+    </Step>
+    <Step id="d6078ea0-2c73-425f-8e74-b511b7873500" name="Levering bij klanten van 10u30 tot 11u30 door Arthur" title="" number="" html="&lt;p&gt;&lt;font face='Articulate' size='16' color='#000000'&gt; &lt;/font&gt;&lt;br&gt;&lt;/br&gt;&lt;/p&gt;">
+    </Step>
+    <Step id="77415b6e-1979-43e3-b7b4-bb911612e2f9" name="12u tot 14u00 verkoop in de winkel" title="" number="" html="&lt;p&gt;&lt;font face='Articulate' size='16' color='#000000'&gt; &lt;/font&gt;&lt;br&gt;&lt;/br&gt;&lt;/p&gt;">
+    </Step>
+    <Step id="09dc75c6-2f6e-427f-ae35-b0762fdceda8" name="Opruimen na middagdrukte / planken &amp; machines kuisen" title="" number="" html="&lt;p&gt;&lt;font face='Articulate' size='16' color='#000000'&gt; &lt;/font&gt;&lt;br&gt;&lt;/br&gt;&lt;/p&gt;">
+    </Step>
+    <Step id="d7d7eb04-f8c7-42a7-b8c1-02ad12d5d4d4" name="Producten aanvullen voor de middagverkoop" title="" number="" html="&lt;p&gt;&lt;font face='Articulate' size='16' color='#000000'&gt; &lt;/font&gt;&lt;br&gt;&lt;/br&gt;&lt;/p&gt;">
+    </Step>
+    <Step id="67c5568d-5363-403a-99a5-b26548d71bfe" name="Verpakking aanvullen" title="" number="" html="&lt;p&gt;&lt;font face='Articulate' size='16' color='#000000'&gt; &lt;/font&gt;&lt;br&gt;&lt;/br&gt;&lt;/p&gt;">
+    </Step>
+    <Step id="c7806ff7-d45c-4a4b-9d68-78b05dfa6c1a" name="Einde van de dag winkel sluit om 18u00" title="" number="" html="&lt;p&gt;&lt;font face='Articulate' size='16' color='#000000'&gt; &lt;/font&gt;&lt;br&gt;&lt;/br&gt;&lt;/p&gt;">
+    </Step>
+    <Step id="679bdf5b-41a5-493a-be00-59e403020e2d" name="Winkel opruimen" title="" number="" html="&lt;p&gt;&lt;font face='Articulate' size='16' color='#000000'&gt; &lt;/font&gt;&lt;br&gt;&lt;/br&gt;&lt;/p&gt;">
+    </Step>
+    <Step id="3439740c-6a89-4d9c-b6d5-16eeb1cbb02f" name="Voorraden nakijken" title="" number="" html="&lt;p&gt;&lt;font face='Articulate' size='16' color='#000000'&gt; &lt;/font&gt;&lt;br&gt;&lt;/br&gt;&lt;/p&gt;">
+    </Step>
+    <Step id="2e987e98-5c36-4fe0-9432-0156843c46a4" name="Toestellen en winkelruimte volledig reinigen" title="" number="" html="&lt;p&gt;&lt;font face='Articulate' size='16' color='#000000'&gt; &lt;/font&gt;&lt;br&gt;&lt;/br&gt;&lt;/p&gt;">
+    </Step>
+    <Step id="c055a054-6b88-47e1-899d-4495771de134" name="Kassa maken" title="" number="" html="&lt;p&gt;&lt;font face='Articulate' size='16' color='#000000'&gt; &lt;/font&gt;&lt;br&gt;&lt;/br&gt;&lt;/p&gt;">
+    </Step>
+    <Step id="f78cf39b-6d68-4878-963e-76d732911449" name="Kasdagboek invullen / Dagboek verkopen invullen" title="" number="" html="&lt;p&gt;&lt;font face='Articulate' size='16' color='#000000'&gt; &lt;/font&gt;&lt;br&gt;&lt;/br&gt;&lt;/p&gt;">
+    </Step>
+    <Step id="a449b555-2ead-4185-9fd8-c79ac7a6ccb8" name="Geld naar de bank brengen" title="" number="" html="&lt;p&gt;&lt;font face='Articulate' size='16' color='#000000'&gt; &lt;/font&gt;&lt;br&gt;&lt;/br&gt;&lt;/p&gt;">
+    </Step>
+  </steps>
+  <nextslide enabled="False" text="" show="" />
+  <starttip show="false" text="Click next to continue" />
+  <resume id="661bb467-e9fe-4f92-8e80-e73609be5ea1" enabled="false" />
+</Interaction>
