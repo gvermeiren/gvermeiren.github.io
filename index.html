@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="nl">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leerpaden</title>
+<meta name="description" content="Drie korte leerpaden over AI, veilig online zijn en nepnieuws, voor 12–14, 15–18 en volwassenen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&display=swap">
+<style>
+:root{
+  --bg:#F4F1EA; --paper:#FFFDF8; --ink:#1E1B16; --muted:#5E574C; --line:#E2DBCD; --sunk:#ECE6DA;
+  --pl:#3D46C9; --pl-soft:#E6E8FB; --vo:#C8283A; --vo-soft:#FBE5E8; --mw:#B4540F; --mw-soft:#FBEBDD;
+  --f-display:"Bricolage Grotesque","Avenir Next","Segoe UI",system-ui,sans-serif;
+  --f-body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
+  --r:18px; color-scheme:light;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#13120F; --paper:#1C1A16; --ink:#F2EDE3; --muted:#B3AA9B; --line:#34302A; --sunk:#25221D;
+  --pl:#9AA1FF; --pl-soft:#252A55; --vo:#FF7A86; --vo-soft:#4A1C23; --mw:#F2A15C; --mw-soft:#45290F; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#13120F; --paper:#1C1A16; --ink:#F2EDE3; --muted:#B3AA9B; --line:#34302A; --sunk:#25221D;
+  --pl:#9AA1FF; --pl-soft:#252A55; --vo:#FF7A86; --vo-soft:#4A1C23; --mw:#F2A15C; --mw-soft:#45290F; color-scheme:dark }
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 var(--f-body)}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+header.top{padding:28px 0 8px}
+.brand{display:flex;align-items:center;gap:10px;font:800 1.05rem var(--f-display);letter-spacing:-.01em}
+.brand .dots{display:flex;gap:4px}
+.brand .dots i{width:10px;height:10px;border-radius:50%;display:block}
+.hero{padding:36px 0 26px;display:grid;gap:18px}
+.hero h1{font:800 clamp(2.1rem,5.4vw,3.6rem)/1.04 var(--f-display);letter-spacing:-.025em;margin:0;max-width:16ch}
+.hero p{margin:0;max-width:66ch;color:var(--muted);font-size:1.06rem}
+.hero p.lead{color:var(--ink);font-size:clamp(1.15rem,2.2vw,1.32rem);line-height:1.5;max-width:58ch}
+.hero .tekst{display:grid;gap:12px}
+.hero p b{color:var(--ink)}
+section.hoe{padding:40px 0 4px}
+section.hoe h2{font:800 1.6rem var(--f-display);letter-spacing:-.02em;margin:0 0 4px}
+section.hoe > p{margin:0 0 18px;color:var(--muted);max-width:66ch}
+.stappen{list-style:none;margin:0;padding:0;display:grid;gap:12px;grid-template-columns:repeat(4,1fr);counter-reset:st}
+@media (max-width:900px){ .stappen{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:560px){ .stappen{grid-template-columns:1fr} }
+.stappen li{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:16px;counter-increment:st}
+.stappen li::before{content:counter(st);display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:var(--ink);color:var(--bg);font:800 .95rem var(--f-display);margin-bottom:10px}
+.stappen b{display:block;font:800 1.08rem var(--f-display);margin-bottom:4px}
+.stappen span{color:var(--muted);font-size:.95rem}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.facts span{background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.92rem}
+.facts b{font-family:var(--f-display)}
+
+.labs{display:grid;gap:18px;grid-template-columns:repeat(3,1fr);padding:10px 0 8px}
+@media (max-width:900px){ .labs{grid-template-columns:1fr} }
+.lab{--c:var(--pl);--soft:var(--pl-soft);background:var(--paper);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.lab.vo{--c:var(--vo);--soft:var(--vo-soft)} .lab.mw{--c:var(--mw);--soft:var(--mw-soft)}
+.band{background:var(--soft);padding:22px 20px 18px;position:relative;border-bottom:1px solid var(--line)}
+.band .kicker{font:700 .78rem var(--f-body);letter-spacing:.09em;text-transform:uppercase;color:var(--c)}
+.band h2{font:800 1.75rem/1.1 var(--f-display);letter-spacing:-.02em;margin:6px 0 14px}
+.faces{display:flex}
+.faces svg{width:58px;height:58px;border-radius:50%;border:3px solid var(--paper);margin-right:-12px;background:var(--paper)}
+.body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:14px;flex:1}
+.tag{font:600 1.08rem/1.3 var(--f-display);margin:0}
+.body p{margin:0;color:var(--muted)}
+.body p.gids{font-size:.92rem;border-left:3px solid var(--c);padding-left:10px}
+.body p.gids b{color:var(--ink)}
+.haltes{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:6px}
+.haltes li{font-size:.84rem;border:1px solid var(--line);background:var(--bg);border-radius:8px;padding:3px 9px;color:var(--muted)}
+.go{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--c);color:#fff;text-decoration:none;font:700 1.02rem var(--f-body);padding:13px 18px;border-radius:12px;transition:transform .15s ease, filter .15s ease}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .go{color:#17140F} }
+:root[data-theme="dark"] .go{color:#17140F}
+.go:hover{filter:brightness(1.07);transform:translateY(-1px)}
+.go:focus-visible,.pick:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.go svg{width:20px;height:20px;flex:none}
+
+section.direct{padding:40px 0 10px}
+section.direct h2{font:800 1.6rem var(--f-display);letter-spacing:-.02em;margin:0 0 4px}
+section.direct > p{margin:0 0 18px;color:var(--muted)}
+.rows{display:grid;gap:12px}
+.row{background:var(--paper);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;display:grid;grid-template-columns:150px 1fr;gap:12px;align-items:center}
+.row h3{margin:0;font:800 1.1rem var(--f-display)}
+.row h3 small{display:block;font:400 .85rem var(--f-body);color:var(--muted)}
+.picks{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.pick{--c:var(--pl);--soft:var(--pl-soft);display:flex;align-items:center;gap:10px;text-decoration:none;border:1px solid var(--line);border-radius:12px;padding:8px 12px 8px 8px;background:var(--bg);transition:border-color .15s ease, background .15s ease}
+.pick.vo{--c:var(--vo);--soft:var(--vo-soft)} .pick.mw{--c:var(--mw);--soft:var(--mw-soft)}
+.pick:hover{border-color:var(--c);background:var(--soft)}
+.pick svg{width:42px;height:42px;border-radius:50%;flex:none}
+.pick b{display:block;font-size:.98rem;line-height:1.2;color:var(--ink)}
+.pick > span > span{font-size:.84rem;color:var(--muted)}
+@media (max-width:760px){ .row{grid-template-columns:1fr} .picks{grid-template-columns:1fr} }
+
+.weet{display:grid;gap:12px;grid-template-columns:repeat(3,1fr);padding:36px 0 8px}
+@media (max-width:760px){ .weet{grid-template-columns:1fr} }
+.weet div{background:var(--sunk);border-radius:14px;padding:14px 16px}
+.weet b{display:block;margin-bottom:2px}
+.weet span{color:var(--muted);font-size:.95rem}
+footer{padding:28px 0 40px;color:var(--muted);font-size:.88rem;border-top:1px solid var(--line);margin-top:30px}
+</style>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><span class="dots"><i style="background:var(--pl)"></i><i style="background:var(--vo)"></i><i style="background:var(--mw)"></i></span>Leerpaden</div>
+  </header>
+
+  <section class="hero">
+    <h1>Slim omgaan met AI, internet en nieuws.</h1>
+    <div class="tekst">
+      <p class="lead">AI-chatbots, sociale media, phishingmails en berichten die net te mooi of te schokkend zijn om waar te zijn: ze horen bij het dagelijkse leven van jongeren en volwassenen. Deze drie leerpaden helpen je om daar bewust en met vertrouwen mee om te gaan.</p>
+      <p>Elk leerpad behandelt één thema. In <b>Promptlab</b> leer je AI duidelijke vragen stellen en de antwoorden kritisch bekijken. In <b>Veilig Online Lab</b> bescherm je je accounts en leer je oplichters herkennen voor ze toeslaan. In <b>Mediawijslab</b> check je bronnen, beelden en cijfers voor je iets gelooft of doorstuurt. Samen vormen ze een stevige basis om je digitaal staande te houden.</p>
+      <p>Je hoeft niets te installeren, geen account te maken en geen AI te gebruiken. Alle oefeningen werken met nagemaakte berichten, websites en gesprekken, dus je kan veilig fouten maken, en elke fout levert meteen uitleg op. De drie leerpaden zijn op dezelfde manier opgebouwd: wie er één kent, vindt meteen de weg in de andere. Je kiest zelf met welk je begint.</p>
+    </div>
+    <div class="facts"><span><b>3</b> leerpaden</span><span><b>30</b> lessen per leerpad</span><span><b>3</b> leeftijdsgroepen</span><span>gsm, tablet en computer</span></div>
+  </section>
+
+  <main>
+    <div class="labs">
+      <article class="lab pl">
+        <div class="band"><div class="kicker">Leren prompten</div><h2>Promptlab</h2><div class="faces"><svg class="guide" viewBox="0 0 100 100" width="72" height="72"  aria-hidden="true" focusable="false"><defs><clipPath id="promptlab1x1"><circle cx="50" cy="50" r="50"/></clipPath></defs>
+    <g clip-path="url(#promptlab1x1)"><rect width="100" height="100" fill="#FFD9A8"/><path d="M29 46 C29 28 38 21 50 21 C62 21 71 28 71 46 L71 61 C67 63 63 61 62 57 L38 57 C37 61 33 63 29 61 Z" fill="#5A3A24"/><rect x="45" y="58" width="10" height="14" fill="#F1C19A"/><path d="M14 104 C14 80 30 70 50 70 C70 70 86 80 86 104 Z" fill="#1E9C8F"/><rect x="33" y="73" width="6" height="30" rx="3" fill="#F0AE3A"/><rect x="61" y="73" width="6" height="30" rx="3" fill="#F0AE3A"/><circle cx="31.5" cy="47" r="4" fill="#F1C19A"/><circle cx="68.5" cy="47" r="4" fill="#F1C19A"/><circle cx="50" cy="45" r="19" fill="#F1C19A"/><path d="M39.5 47 Q43 43 46.5 47" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M53.5 47 Q57 43 60.5 47" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M43 54 Q50 61.5 57 54" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M31.5 41 C32 29 41 25 51 25 C61 25 68.5 30 68.5 41 C62 37 56 34.5 50 37 C45 34 37.5 37 31.5 41 Z" fill="#5A3A24"/>
+      <path d="M30.5 35 C31.5 21 68.5 21 69.5 35 Z" fill="#FF6B4A"/><path d="M50 31.5 L79 31.5 Q82 35.5 77.5 36.5 L50 36.5 Z" fill="#D9481F"/>
+      <circle cx="38.5" cy="52" r="3.2" fill="#F08C78" opacity=".55"/><circle cx="61.5" cy="52" r="3.2" fill="#F08C78" opacity=".55"/></g></svg><svg class="guide" viewBox="0 0 100 100" width="72" height="72"  aria-hidden="true" focusable="false"><defs><clipPath id="promptlab2x2"><circle cx="50" cy="50" r="50"/></clipPath></defs>
+    <g clip-path="url(#promptlab2x2)"><rect width="100" height="100" fill="#6E5BD6"/><rect x="45" y="58" width="10" height="14" fill="#8D5A3B"/><path d="M14 104 C14 80 30 70 50 70 C70 70 86 80 86 104 Z" fill="#2B2460"/><path d="M32 71 Q50 87 68 71 L64 68 Q50 79 36 68 Z" fill="#1B1640"/><path d="M45 78 L44 93 M55 78 L56 93" stroke="#E8E4FF" stroke-width="2" stroke-linecap="round"/>
+      <path d="M30 68 C30 87 70 87 70 68" fill="none" stroke="#111" stroke-width="5"/><rect x="25" y="62" width="10" height="15" rx="4" fill="#3FE0D0"/><rect x="65" y="62" width="10" height="15" rx="4" fill="#3FE0D0"/><circle cx="31.5" cy="47" r="4" fill="#8D5A3B"/><circle cx="68.5" cy="47" r="4" fill="#8D5A3B"/><circle cx="50" cy="45" r="19" fill="#8D5A3B"/><path d="M39.5 47 Q43 43 46.5 47" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M53.5 47 Q57 43 60.5 47" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M43 54 Q50 61.5 57 54" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><circle cx="36" cy="35" r="8" fill="#161212"/><circle cx="43" cy="28" r="8.5" fill="#161212"/><circle cx="52" cy="25.5" r="8.5" fill="#161212"/><circle cx="61" cy="29" r="8.5" fill="#161212"/><circle cx="67" cy="37" r="6.5" fill="#161212"/><circle cx="33" cy="42" r="5.5" fill="#161212"/><circle cx="49" cy="32" r="8" fill="#161212"/></g></svg><svg class="guide" viewBox="0 0 100 100" width="72" height="72"  aria-hidden="true" focusable="false"><defs><clipPath id="promptlab3x3"><circle cx="50" cy="50" r="50"/></clipPath></defs>
+    <g clip-path="url(#promptlab3x3)"><rect width="100" height="100" fill="#A9D6C2"/><rect x="45" y="58" width="10" height="14" fill="#E3B58F"/><path d="M14 104 C14 80 30 70 50 70 C70 70 86 80 86 104 Z" fill="#2E5E73"/><path d="M41 69 L50 81 L50 70 Z" fill="#F4F4EE"/><path d="M59 69 L50 81 L50 70 Z" fill="#F4F4EE"/><circle cx="31.5" cy="47" r="4" fill="#E3B58F"/><circle cx="68.5" cy="47" r="4" fill="#E3B58F"/><circle cx="50" cy="45" r="19" fill="#E3B58F"/><path d="M39.5 47 Q43 43 46.5 47" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M53.5 47 Q57 43 60.5 47" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M43 54 Q50 61.5 57 54" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M31 43 C30 26 42 20.5 52 21.5 C64 22.5 71 30 69.5 43 C64 34 54 31 44 34 C38 36 33.5 39 31 43 Z" fill="#7A6655"/>
+      <path d="M53 22.3 C61 23.5 67 28 68.5 35 C62 30 56 28 49.5 28 Z" fill="#B3ABA2"/>
+      <circle cx="43" cy="46" r="5.8" fill="none" stroke="#2a2a2a" stroke-width="1.8"/><circle cx="57" cy="46" r="5.8" fill="none" stroke="#2a2a2a" stroke-width="1.8"/><path d="M48.8 46 L51.2 46" stroke="#2a2a2a" stroke-width="1.8"/></g></svg></div></div>
+        <div class="body">
+          <p class="tag">Leer AI de juiste vraag stellen.</p>
+          <p>Duidelijk vragen, context geven en bijsturen, en de antwoorden kritisch bekijken.</p>
+          <p class="gids">Je gids is <b>Nova</b> (12–14), <b>Kai</b> (15–18) of <b>Sam</b> (volwassenen).</p>
+          <ul class="haltes" aria-label="Haltes"><li>Duidelijk vragen</li><li>Context geven</li><li>Rollen en stappen</li><li>Bijsturen</li><li>Veilig en kritisch</li></ul>
+          <a class="go" href="https://gvermeiren.github.io/promptlab/">Start Promptlab <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="lab vo">
+        <div class="band"><div class="kicker">Veilig online</div><h2>Veilig Online Lab</h2><div class="faces"><svg class="guide" viewBox="0 0 100 100" width="72" height="72"  aria-hidden="true" focusable="false"><defs><clipPath id="veilig1x4"><circle cx="50" cy="50" r="50"/></clipPath></defs>
+    <g clip-path="url(#veilig1x4)"><rect width="100" height="100" fill="#FFE08A"/><circle cx="32" cy="27" r="9.5" fill="#2B1B12"/><circle cx="68" cy="27" r="9.5" fill="#2B1B12"/><rect x="45" y="58" width="10" height="14" fill="#B97A50"/><path d="M14 104 C14 80 30 70 50 70 C70 70 86 80 86 104 Z" fill="#E2363E"/><path d="M30 72 Q50 64 70 72 L66 80 Q50 74 34 80 Z" fill="#B8222A"/><path d="M45 76 L44 90 M55 76 L56 90" stroke="#FFE08A" stroke-width="2" stroke-linecap="round"/><circle cx="31.5" cy="47" r="4" fill="#B97A50"/><circle cx="68.5" cy="47" r="4" fill="#B97A50"/><circle cx="50" cy="45" r="19" fill="#B97A50"/><path d="M39.5 47 Q43 43 46.5 47" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M53.5 47 Q57 43 60.5 47" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M43 54 Q50 61.5 57 54" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M31 43 C31 27 41 24 50 24 C59 24 69 27 69 43 C63 35 57 33 50 33 C43 33 37 35 31 43 Z" fill="#2B1B12"/>
+      <path d="M62 27 l1.6 3.2 3.5.5-2.5 2.5.6 3.5-3.2-1.7-3.2 1.7.6-3.5-2.5-2.5 3.5-.5z" fill="#FFC23D"/>
+      <circle cx="38.5" cy="52" r="3.2" fill="#E37A6C" opacity=".5"/><circle cx="61.5" cy="52" r="3.2" fill="#E37A6C" opacity=".5"/></g></svg><svg class="guide" viewBox="0 0 100 100" width="72" height="72"  aria-hidden="true" focusable="false"><defs><clipPath id="veilig2x5"><circle cx="50" cy="50" r="50"/></clipPath></defs>
+    <g clip-path="url(#veilig2x5)"><rect width="100" height="100" fill="#0F3A2D"/><rect x="45" y="58" width="10" height="14" fill="#9C6440"/><path d="M14 104 C14 80 30 70 50 70 C70 70 86 80 86 104 Z" fill="#1B2430"/><path d="M32 71 Q50 86 68 71 L64 68 Q50 78 36 68 Z" fill="#0E141B"/><path d="M45 77 L44 92 M55 77 L56 92" stroke="#00E5A0" stroke-width="2" stroke-linecap="round"/><circle cx="31.5" cy="47" r="4" fill="#9C6440"/><circle cx="68.5" cy="47" r="4" fill="#9C6440"/><circle cx="50" cy="45" r="19" fill="#9C6440"/><path d="M39.5 47 Q43 43 46.5 47" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M53.5 47 Q57 43 60.5 47" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M43 54 Q50 61.5 57 54" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M30.5 40 C30 22 70 22 69.5 40 Z" fill="#00E5A0"/><rect x="30" y="35" width="40" height="7" rx="3" fill="#00B47E"/><circle cx="50" cy="22" r="3.5" fill="#00E5A0"/>
+      <circle cx="43" cy="47" r="5.6" fill="none" stroke="#0E141B" stroke-width="1.8"/><circle cx="57" cy="47" r="5.6" fill="none" stroke="#0E141B" stroke-width="1.8"/><path d="M48.6 47 L51.4 47" stroke="#0E141B" stroke-width="1.8"/></g></svg><svg class="guide" viewBox="0 0 100 100" width="72" height="72"  aria-hidden="true" focusable="false"><defs><clipPath id="veilig3x6"><circle cx="50" cy="50" r="50"/></clipPath></defs>
+    <g clip-path="url(#veilig3x6)"><rect width="100" height="100" fill="#CFE0F3"/><path d="M28 48 C27 27 39 22 50 22 C61 22 73 27 72 48 L72 61 C68 61 66 58 66 53 L34 53 C34 58 32 61 28 61 Z" fill="#A6532E"/><rect x="45" y="58" width="10" height="14" fill="#F0C7A6"/><path d="M14 104 C14 80 30 70 50 70 C70 70 86 80 86 104 Z" fill="#1F3B63"/><path d="M40 69 L50 86 L60 69 Z" fill="#F4F4EE"/><path d="M38 69 L50 92 L44 104 L30 104 Z" fill="#162C4A"/><path d="M62 69 L50 92 L56 104 L70 104 Z" fill="#162C4A"/>
+      <path d="M42 72 L52 88 M58 72 L52 88" stroke="#E8B23A" stroke-width="1.6"/><rect x="47.5" y="87" width="10" height="13" rx="2" fill="#FFFFFF" stroke="#E8B23A" stroke-width="1.4"/><circle cx="31.5" cy="47" r="4" fill="#F0C7A6"/><circle cx="68.5" cy="47" r="4" fill="#F0C7A6"/><circle cx="50" cy="45" r="19" fill="#F0C7A6"/><path d="M39.5 47 Q43 43 46.5 47" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M53.5 47 Q57 43 60.5 47" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M43 54 Q50 61.5 57 54" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M31 41 C33 28 42 25 51 25 C60 25 67 29 69 41 C60 35 50 33 40 37 C36 38 33 39 31 41 Z" fill="#A6532E"/></g></svg></div></div>
+        <div class="body">
+          <p class="tag">Word slimmer dan de Kameleon.</p>
+          <p>Sterke wachtwoorden, tweestapsverificatie en oplichting doorprikken, plus een noodplan voor als het misloopt.</p>
+          <p class="gids">Je gids is <b>Juno</b> (12–14), <b>Ravi</b> (15–18) of <b>Ines</b> (volwassenen).</p>
+          <ul class="haltes" aria-label="Haltes"><li>Wachtwoorden</li><li>Tweestapsverificatie</li><li>Phishing</li><li>Oplichting</li><li>Privacy</li></ul>
+          <a class="go" href="https://gvermeiren.github.io/veiligonlinelab/">Start Veilig Online Lab <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="lab mw">
+        <div class="band"><div class="kicker">Nepnieuws herkennen</div><h2>Mediawijslab</h2><div class="faces"><svg class="guide" viewBox="0 0 100 100" width="72" height="72"  aria-hidden="true" focusable="false"><defs><clipPath id="media1x7"><circle cx="50" cy="50" r="50"/></clipPath></defs>
+    <g clip-path="url(#media1x7)"><rect width="100" height="100" fill="#FFD27A"/><rect x="45" y="58" width="10" height="14" fill="#E8B48F"/><path d="M14 104 C14 80 30 70 50 70 C70 70 86 80 86 104 Z" fill="#E8590C"/><path d="M36 70 L50 92 L64 70" fill="none" stroke="#3B2A20" stroke-width="2"/><rect x="41" y="86" width="18" height="12" rx="3" fill="#2E3440"/><circle cx="50" cy="92" r="4" fill="#9FB4C7" stroke="#1C2128" stroke-width="1.5"/><rect x="53" y="87.5" width="4" height="2.5" rx="1" fill="#FFD27A"/><circle cx="31.5" cy="47" r="4" fill="#E8B48F"/><circle cx="68.5" cy="47" r="4" fill="#E8B48F"/><circle cx="50" cy="45" r="19" fill="#E8B48F"/><path d="M39.5 47 Q43 43 46.5 47" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M53.5 47 Q57 43 60.5 47" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M43 54 Q50 61.5 57 54" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M30.5 44 C29 30 37 23 46 24 C47 20 55 20 57 24 C66 23 72 31 69.5 44 C67 37 64 35 60 34 C61 38 58 39 56 36 C53 39 48 39 46 35 C43 38 39 38 40 34 C35 35 32 38 30.5 44 Z" fill="#7A4A26"/>
+      <circle cx="38.5" cy="52" r="3" fill="#E37A6C" opacity=".45"/><circle cx="61.5" cy="52" r="3" fill="#E37A6C" opacity=".45"/></g></svg><svg class="guide" viewBox="0 0 100 100" width="72" height="72"  aria-hidden="true" focusable="false"><defs><clipPath id="media2x8"><circle cx="50" cy="50" r="50"/></clipPath></defs>
+    <g clip-path="url(#media2x8)"><rect width="100" height="100" fill="#2A1A24"/><path d="M29 44 C28 24 40 21 50 21 C60 21 72 24 71 44 L74 86 C66 90 60 86 58 80 L42 80 C40 86 34 90 26 86 Z" fill="#1E1412"/><rect x="45" y="58" width="10" height="14" fill="#C68A63"/><path d="M14 104 C14 80 30 70 50 70 C70 70 86 80 86 104 Z" fill="#1F8A8A"/><path d="M34 72 L42 104 M66 72 L58 104" stroke="#167272" stroke-width="5"/><circle cx="31.5" cy="47" r="4" fill="#C68A63"/><circle cx="68.5" cy="47" r="4" fill="#C68A63"/><circle cx="50" cy="45" r="19" fill="#C68A63"/><path d="M39.5 47 Q43 43 46.5 47" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M53.5 47 Q57 43 60.5 47" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M43 54 Q50 61.5 57 54" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M31 42 C32 28 41 24 50 24 C60 24 68 28 69 42 C63 34 56 31 49 31 C43 32 36 36 31 42 Z" fill="#1E1412"/>
+      <circle cx="43" cy="47" r="5.6" fill="none" stroke="#C9A227" stroke-width="1.8"/><circle cx="57" cy="47" r="5.6" fill="none" stroke="#C9A227" stroke-width="1.8"/><path d="M48.6 47 L51.4 47" stroke="#C9A227" stroke-width="1.8"/>
+      <path d="M66 30 L76 40" stroke="#F2C14E" stroke-width="3.2" stroke-linecap="round"/><path d="M75 39 L78 42" stroke="#2a1d17" stroke-width="3.2" stroke-linecap="round"/></g></svg><svg class="guide" viewBox="0 0 100 100" width="72" height="72"  aria-hidden="true" focusable="false"><defs><clipPath id="media3x9"><circle cx="50" cy="50" r="50"/></clipPath></defs>
+    <g clip-path="url(#media3x9)"><rect width="100" height="100" fill="#DCE3EA"/><rect x="45" y="58" width="10" height="14" fill="#EAC3A2"/><path d="M14 104 C14 80 30 70 50 70 C70 70 86 80 86 104 Z" fill="#2B3A55"/><path d="M40 70 L50 86 L60 70 Z" fill="#F3F5F8"/><path d="M38 70 L50 92 L44 104 L30 104 Z" fill="#1E2A3E"/><path d="M62 70 L50 92 L56 104 L70 104 Z" fill="#1E2A3E"/>
+      <rect x="60" y="82" width="9" height="2.5" fill="#C9D3DE"/><path d="M63 76 L63 83" stroke="#B3261E" stroke-width="2" stroke-linecap="round"/><circle cx="31.5" cy="47" r="4" fill="#EAC3A2"/><circle cx="68.5" cy="47" r="4" fill="#EAC3A2"/><circle cx="50" cy="45" r="19" fill="#EAC3A2"/><path d="M39.5 47 Q43 43 46.5 47" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M53.5 47 Q57 43 60.5 47" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M43 54 Q50 61.5 57 54" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M31 41 C32 29 41 25 50 25 C59 25 68 29 69 41 C64 35 58 33 50 33 C42 33 36 35 31 41 Z" fill="#A7A9AC"/>
+      <path d="M33 50 C34 62 42 66 50 66 C58 66 66 62 67 50 C64 57 58 59 50 59 C42 59 36 57 33 50 Z" fill="#8E9094"/></g></svg></div></div>
+        <div class="body">
+          <p class="tag">Laat het Gerucht niet groeien.</p>
+          <p>Bronnen, beelden en cijfers checken, begrijpen hoe je feed werkt en bewust delen.</p>
+          <p class="gids">Je gids is <b>Arne</b> (12–14), <b>Noor</b> (15–18) of <b>Kurt</b> (volwassenen).</p>
+          <ul class="haltes" aria-label="Haltes"><li>Bronnen</li><li>Beelden en video</li><li>Cijfers</li><li>Je feed</li><li>Zelf checken</li></ul>
+          <a class="go" href="https://gvermeiren.github.io/mediawijslab/">Start Mediawijslab <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+    </div>
+
+    <section class="hoe" aria-labelledby="hoe-h">
+      <h2 id="hoe-h">Zo werkt elk leerpad</h2>
+      <p>Elk leerpad telt 8 haltes en 30 lessen. Een les duurt 5 tot 10 minuten, dus je kan ook in korte stukjes werken.</p>
+      <ol class="stappen">
+        <li><b>Kies je gids</b><span>Elke leeftijdsgroep heeft een eigen gids, met voorbeelden uit de eigen leefwereld: school, games en de groepschat voor 12–14, sociale media en bijjobs voor 15–18, werk en gezin voor volwassenen.</span></li>
+        <li><b>Volg de 8 haltes</b><span>Van de basis naar de eindproef. Elke halte telt 3 tot 5 korte lessen en bouwt verder op de vorige. Heb je één onderwerp nodig, dan ga je meteen naar die halte.</span></li>
+        <li><b>Lees, kijk en oefen</b><span>Elke les heeft een korte uitleg, een uitgewerkt voorbeeld en oefeningen die zichzelf verbeteren: kiezen, koppelen, in volgorde zetten, rode vlaggen aantikken of zelf iets schrijven.</span></li>
+        <li><b>Haal je bewijs</b><span>Na elke halte krijg je een beloning. Na de eindproef krijg je een diploma, skillkaart of deelnamebewijs met je naam, om te bewaren of af te drukken.</span></li>
+      </ol>
+    </section>
+
+    <section class="direct" aria-labelledby="direct-h">
+      <h2 id="direct-h">Meteen naar jouw leeftijd</h2>
+      <p>Elke leeftijdsgroep heeft in elk leerpad een eigen gids en eigen voorbeelden.</p>
+      <div class="rows"><div class="row"><h3>12–14 jaar<small>Speels en kort</small></h3><div class="picks"><a class="pick pl" href="https://gvermeiren.github.io/promptlab/promptlab-12-14.html"><svg class="guide" viewBox="0 0 100 100" width="72" height="72"  aria-hidden="true" focusable="false"><defs><clipPath id="promptlab1x10"><circle cx="50" cy="50" r="50"/></clipPath></defs>
+    <g clip-path="url(#promptlab1x10)"><rect width="100" height="100" fill="#FFD9A8"/><path d="M29 46 C29 28 38 21 50 21 C62 21 71 28 71 46 L71 61 C67 63 63 61 62 57 L38 57 C37 61 33 63 29 61 Z" fill="#5A3A24"/><rect x="45" y="58" width="10" height="14" fill="#F1C19A"/><path d="M14 104 C14 80 30 70 50 70 C70 70 86 80 86 104 Z" fill="#1E9C8F"/><rect x="33" y="73" width="6" height="30" rx="3" fill="#F0AE3A"/><rect x="61" y="73" width="6" height="30" rx="3" fill="#F0AE3A"/><circle cx="31.5" cy="47" r="4" fill="#F1C19A"/><circle cx="68.5" cy="47" r="4" fill="#F1C19A"/><circle cx="50" cy="45" r="19" fill="#F1C19A"/><path d="M39.5 47 Q43 43 46.5 47" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M53.5 47 Q57 43 60.5 47" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M43 54 Q50 61.5 57 54" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M31.5 41 C32 29 41 25 51 25 C61 25 68.5 30 68.5 41 C62 37 56 34.5 50 37 C45 34 37.5 37 31.5 41 Z" fill="#5A3A24"/>
+      <path d="M30.5 35 C31.5 21 68.5 21 69.5 35 Z" fill="#FF6B4A"/><path d="M50 31.5 L79 31.5 Q82 35.5 77.5 36.5 L50 36.5 Z" fill="#D9481F"/>
+      <circle cx="38.5" cy="52" r="3.2" fill="#F08C78" opacity=".55"/><circle cx="61.5" cy="52" r="3.2" fill="#F08C78" opacity=".55"/></g></svg><span><b>Promptlab</b><span>gids Nova</span></span></a><a class="pick vo" href="https://gvermeiren.github.io/veiligonlinelab/veilig-online-lab-12-14.html"><svg class="guide" viewBox="0 0 100 100" width="72" height="72"  aria-hidden="true" focusable="false"><defs><clipPath id="veilig1x11"><circle cx="50" cy="50" r="50"/></clipPath></defs>
+    <g clip-path="url(#veilig1x11)"><rect width="100" height="100" fill="#FFE08A"/><circle cx="32" cy="27" r="9.5" fill="#2B1B12"/><circle cx="68" cy="27" r="9.5" fill="#2B1B12"/><rect x="45" y="58" width="10" height="14" fill="#B97A50"/><path d="M14 104 C14 80 30 70 50 70 C70 70 86 80 86 104 Z" fill="#E2363E"/><path d="M30 72 Q50 64 70 72 L66 80 Q50 74 34 80 Z" fill="#B8222A"/><path d="M45 76 L44 90 M55 76 L56 90" stroke="#FFE08A" stroke-width="2" stroke-linecap="round"/><circle cx="31.5" cy="47" r="4" fill="#B97A50"/><circle cx="68.5" cy="47" r="4" fill="#B97A50"/><circle cx="50" cy="45" r="19" fill="#B97A50"/><path d="M39.5 47 Q43 43 46.5 47" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M53.5 47 Q57 43 60.5 47" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M43 54 Q50 61.5 57 54" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M31 43 C31 27 41 24 50 24 C59 24 69 27 69 43 C63 35 57 33 50 33 C43 33 37 35 31 43 Z" fill="#2B1B12"/>
+      <path d="M62 27 l1.6 3.2 3.5.5-2.5 2.5.6 3.5-3.2-1.7-3.2 1.7.6-3.5-2.5-2.5 3.5-.5z" fill="#FFC23D"/>
+      <circle cx="38.5" cy="52" r="3.2" fill="#E37A6C" opacity=".5"/><circle cx="61.5" cy="52" r="3.2" fill="#E37A6C" opacity=".5"/></g></svg><span><b>Veilig Online Lab</b><span>gids Juno</span></span></a><a class="pick mw" href="https://gvermeiren.github.io/mediawijslab/mediawijslab-12-14.html"><svg class="guide" viewBox="0 0 100 100" width="72" height="72"  aria-hidden="true" focusable="false"><defs><clipPath id="media1x12"><circle cx="50" cy="50" r="50"/></clipPath></defs>
+    <g clip-path="url(#media1x12)"><rect width="100" height="100" fill="#FFD27A"/><rect x="45" y="58" width="10" height="14" fill="#E8B48F"/><path d="M14 104 C14 80 30 70 50 70 C70 70 86 80 86 104 Z" fill="#E8590C"/><path d="M36 70 L50 92 L64 70" fill="none" stroke="#3B2A20" stroke-width="2"/><rect x="41" y="86" width="18" height="12" rx="3" fill="#2E3440"/><circle cx="50" cy="92" r="4" fill="#9FB4C7" stroke="#1C2128" stroke-width="1.5"/><rect x="53" y="87.5" width="4" height="2.5" rx="1" fill="#FFD27A"/><circle cx="31.5" cy="47" r="4" fill="#E8B48F"/><circle cx="68.5" cy="47" r="4" fill="#E8B48F"/><circle cx="50" cy="45" r="19" fill="#E8B48F"/><path d="M39.5 47 Q43 43 46.5 47" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M53.5 47 Q57 43 60.5 47" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M43 54 Q50 61.5 57 54" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M30.5 44 C29 30 37 23 46 24 C47 20 55 20 57 24 C66 23 72 31 69.5 44 C67 37 64 35 60 34 C61 38 58 39 56 36 C53 39 48 39 46 35 C43 38 39 38 40 34 C35 35 32 38 30.5 44 Z" fill="#7A4A26"/>
+      <circle cx="38.5" cy="52" r="3" fill="#E37A6C" opacity=".45"/><circle cx="61.5" cy="52" r="3" fill="#E37A6C" opacity=".45"/></g></svg><span><b>Mediawijslab</b><span>gids Arne</span></span></a></div></div><div class="row"><h3>15–18 jaar<small>Sec, met wat humor</small></h3><div class="picks"><a class="pick pl" href="https://gvermeiren.github.io/promptlab/promptlab-15-18.html"><svg class="guide" viewBox="0 0 100 100" width="72" height="72"  aria-hidden="true" focusable="false"><defs><clipPath id="promptlab2x13"><circle cx="50" cy="50" r="50"/></clipPath></defs>
+    <g clip-path="url(#promptlab2x13)"><rect width="100" height="100" fill="#6E5BD6"/><rect x="45" y="58" width="10" height="14" fill="#8D5A3B"/><path d="M14 104 C14 80 30 70 50 70 C70 70 86 80 86 104 Z" fill="#2B2460"/><path d="M32 71 Q50 87 68 71 L64 68 Q50 79 36 68 Z" fill="#1B1640"/><path d="M45 78 L44 93 M55 78 L56 93" stroke="#E8E4FF" stroke-width="2" stroke-linecap="round"/>
+      <path d="M30 68 C30 87 70 87 70 68" fill="none" stroke="#111" stroke-width="5"/><rect x="25" y="62" width="10" height="15" rx="4" fill="#3FE0D0"/><rect x="65" y="62" width="10" height="15" rx="4" fill="#3FE0D0"/><circle cx="31.5" cy="47" r="4" fill="#8D5A3B"/><circle cx="68.5" cy="47" r="4" fill="#8D5A3B"/><circle cx="50" cy="45" r="19" fill="#8D5A3B"/><path d="M39.5 47 Q43 43 46.5 47" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M53.5 47 Q57 43 60.5 47" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M43 54 Q50 61.5 57 54" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><circle cx="36" cy="35" r="8" fill="#161212"/><circle cx="43" cy="28" r="8.5" fill="#161212"/><circle cx="52" cy="25.5" r="8.5" fill="#161212"/><circle cx="61" cy="29" r="8.5" fill="#161212"/><circle cx="67" cy="37" r="6.5" fill="#161212"/><circle cx="33" cy="42" r="5.5" fill="#161212"/><circle cx="49" cy="32" r="8" fill="#161212"/></g></svg><span><b>Promptlab</b><span>gids Kai</span></span></a><a class="pick vo" href="https://gvermeiren.github.io/veiligonlinelab/veilig-online-lab-15-18.html"><svg class="guide" viewBox="0 0 100 100" width="72" height="72"  aria-hidden="true" focusable="false"><defs><clipPath id="veilig2x14"><circle cx="50" cy="50" r="50"/></clipPath></defs>
+    <g clip-path="url(#veilig2x14)"><rect width="100" height="100" fill="#0F3A2D"/><rect x="45" y="58" width="10" height="14" fill="#9C6440"/><path d="M14 104 C14 80 30 70 50 70 C70 70 86 80 86 104 Z" fill="#1B2430"/><path d="M32 71 Q50 86 68 71 L64 68 Q50 78 36 68 Z" fill="#0E141B"/><path d="M45 77 L44 92 M55 77 L56 92" stroke="#00E5A0" stroke-width="2" stroke-linecap="round"/><circle cx="31.5" cy="47" r="4" fill="#9C6440"/><circle cx="68.5" cy="47" r="4" fill="#9C6440"/><circle cx="50" cy="45" r="19" fill="#9C6440"/><path d="M39.5 47 Q43 43 46.5 47" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M53.5 47 Q57 43 60.5 47" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M43 54 Q50 61.5 57 54" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M30.5 40 C30 22 70 22 69.5 40 Z" fill="#00E5A0"/><rect x="30" y="35" width="40" height="7" rx="3" fill="#00B47E"/><circle cx="50" cy="22" r="3.5" fill="#00E5A0"/>
+      <circle cx="43" cy="47" r="5.6" fill="none" stroke="#0E141B" stroke-width="1.8"/><circle cx="57" cy="47" r="5.6" fill="none" stroke="#0E141B" stroke-width="1.8"/><path d="M48.6 47 L51.4 47" stroke="#0E141B" stroke-width="1.8"/></g></svg><span><b>Veilig Online Lab</b><span>gids Ravi</span></span></a><a class="pick mw" href="https://gvermeiren.github.io/mediawijslab/mediawijslab-15-18.html"><svg class="guide" viewBox="0 0 100 100" width="72" height="72"  aria-hidden="true" focusable="false"><defs><clipPath id="media2x15"><circle cx="50" cy="50" r="50"/></clipPath></defs>
+    <g clip-path="url(#media2x15)"><rect width="100" height="100" fill="#2A1A24"/><path d="M29 44 C28 24 40 21 50 21 C60 21 72 24 71 44 L74 86 C66 90 60 86 58 80 L42 80 C40 86 34 90 26 86 Z" fill="#1E1412"/><rect x="45" y="58" width="10" height="14" fill="#C68A63"/><path d="M14 104 C14 80 30 70 50 70 C70 70 86 80 86 104 Z" fill="#1F8A8A"/><path d="M34 72 L42 104 M66 72 L58 104" stroke="#167272" stroke-width="5"/><circle cx="31.5" cy="47" r="4" fill="#C68A63"/><circle cx="68.5" cy="47" r="4" fill="#C68A63"/><circle cx="50" cy="45" r="19" fill="#C68A63"/><path d="M39.5 47 Q43 43 46.5 47" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M53.5 47 Q57 43 60.5 47" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M43 54 Q50 61.5 57 54" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M31 42 C32 28 41 24 50 24 C60 24 68 28 69 42 C63 34 56 31 49 31 C43 32 36 36 31 42 Z" fill="#1E1412"/>
+      <circle cx="43" cy="47" r="5.6" fill="none" stroke="#C9A227" stroke-width="1.8"/><circle cx="57" cy="47" r="5.6" fill="none" stroke="#C9A227" stroke-width="1.8"/><path d="M48.6 47 L51.4 47" stroke="#C9A227" stroke-width="1.8"/>
+      <path d="M66 30 L76 40" stroke="#F2C14E" stroke-width="3.2" stroke-linecap="round"/><path d="M75 39 L78 42" stroke="#2a1d17" stroke-width="3.2" stroke-linecap="round"/></g></svg><span><b>Mediawijslab</b><span>gids Noor</span></span></a></div></div><div class="row"><h3>Volwassenen<small>Rustig en praktisch</small></h3><div class="picks"><a class="pick pl" href="https://gvermeiren.github.io/promptlab/promptlab-volwassenen.html"><svg class="guide" viewBox="0 0 100 100" width="72" height="72"  aria-hidden="true" focusable="false"><defs><clipPath id="promptlab3x16"><circle cx="50" cy="50" r="50"/></clipPath></defs>
+    <g clip-path="url(#promptlab3x16)"><rect width="100" height="100" fill="#A9D6C2"/><rect x="45" y="58" width="10" height="14" fill="#E3B58F"/><path d="M14 104 C14 80 30 70 50 70 C70 70 86 80 86 104 Z" fill="#2E5E73"/><path d="M41 69 L50 81 L50 70 Z" fill="#F4F4EE"/><path d="M59 69 L50 81 L50 70 Z" fill="#F4F4EE"/><circle cx="31.5" cy="47" r="4" fill="#E3B58F"/><circle cx="68.5" cy="47" r="4" fill="#E3B58F"/><circle cx="50" cy="45" r="19" fill="#E3B58F"/><path d="M39.5 47 Q43 43 46.5 47" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M53.5 47 Q57 43 60.5 47" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M43 54 Q50 61.5 57 54" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M31 43 C30 26 42 20.5 52 21.5 C64 22.5 71 30 69.5 43 C64 34 54 31 44 34 C38 36 33.5 39 31 43 Z" fill="#7A6655"/>
+      <path d="M53 22.3 C61 23.5 67 28 68.5 35 C62 30 56 28 49.5 28 Z" fill="#B3ABA2"/>
+      <circle cx="43" cy="46" r="5.8" fill="none" stroke="#2a2a2a" stroke-width="1.8"/><circle cx="57" cy="46" r="5.8" fill="none" stroke="#2a2a2a" stroke-width="1.8"/><path d="M48.8 46 L51.2 46" stroke="#2a2a2a" stroke-width="1.8"/></g></svg><span><b>Promptlab</b><span>gids Sam</span></span></a><a class="pick vo" href="https://gvermeiren.github.io/veiligonlinelab/veilig-online-lab-volwassenen.html"><svg class="guide" viewBox="0 0 100 100" width="72" height="72"  aria-hidden="true" focusable="false"><defs><clipPath id="veilig3x17"><circle cx="50" cy="50" r="50"/></clipPath></defs>
+    <g clip-path="url(#veilig3x17)"><rect width="100" height="100" fill="#CFE0F3"/><path d="M28 48 C27 27 39 22 50 22 C61 22 73 27 72 48 L72 61 C68 61 66 58 66 53 L34 53 C34 58 32 61 28 61 Z" fill="#A6532E"/><rect x="45" y="58" width="10" height="14" fill="#F0C7A6"/><path d="M14 104 C14 80 30 70 50 70 C70 70 86 80 86 104 Z" fill="#1F3B63"/><path d="M40 69 L50 86 L60 69 Z" fill="#F4F4EE"/><path d="M38 69 L50 92 L44 104 L30 104 Z" fill="#162C4A"/><path d="M62 69 L50 92 L56 104 L70 104 Z" fill="#162C4A"/>
+      <path d="M42 72 L52 88 M58 72 L52 88" stroke="#E8B23A" stroke-width="1.6"/><rect x="47.5" y="87" width="10" height="13" rx="2" fill="#FFFFFF" stroke="#E8B23A" stroke-width="1.4"/><circle cx="31.5" cy="47" r="4" fill="#F0C7A6"/><circle cx="68.5" cy="47" r="4" fill="#F0C7A6"/><circle cx="50" cy="45" r="19" fill="#F0C7A6"/><path d="M39.5 47 Q43 43 46.5 47" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M53.5 47 Q57 43 60.5 47" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M43 54 Q50 61.5 57 54" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M31 41 C33 28 42 25 51 25 C60 25 67 29 69 41 C60 35 50 33 40 37 C36 38 33 39 31 41 Z" fill="#A6532E"/></g></svg><span><b>Veilig Online Lab</b><span>gids Ines</span></span></a><a class="pick mw" href="https://gvermeiren.github.io/mediawijslab/mediawijslab-volwassenen.html"><svg class="guide" viewBox="0 0 100 100" width="72" height="72"  aria-hidden="true" focusable="false"><defs><clipPath id="media3x18"><circle cx="50" cy="50" r="50"/></clipPath></defs>
+    <g clip-path="url(#media3x18)"><rect width="100" height="100" fill="#DCE3EA"/><rect x="45" y="58" width="10" height="14" fill="#EAC3A2"/><path d="M14 104 C14 80 30 70 50 70 C70 70 86 80 86 104 Z" fill="#2B3A55"/><path d="M40 70 L50 86 L60 70 Z" fill="#F3F5F8"/><path d="M38 70 L50 92 L44 104 L30 104 Z" fill="#1E2A3E"/><path d="M62 70 L50 92 L56 104 L70 104 Z" fill="#1E2A3E"/>
+      <rect x="60" y="82" width="9" height="2.5" fill="#C9D3DE"/><path d="M63 76 L63 83" stroke="#B3261E" stroke-width="2" stroke-linecap="round"/><circle cx="31.5" cy="47" r="4" fill="#EAC3A2"/><circle cx="68.5" cy="47" r="4" fill="#EAC3A2"/><circle cx="50" cy="45" r="19" fill="#EAC3A2"/><path d="M39.5 47 Q43 43 46.5 47" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M53.5 47 Q57 43 60.5 47" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M43 54 Q50 61.5 57 54" fill="none" stroke="#2a1d17" stroke-width="2.4" stroke-linecap="round"/><path d="M31 41 C32 29 41 25 50 25 C59 25 68 29 69 41 C64 35 58 33 50 33 C42 33 36 35 31 41 Z" fill="#A7A9AC"/>
+      <path d="M33 50 C34 62 42 66 50 66 C58 66 66 62 67 50 C64 57 58 59 50 59 C42 59 36 57 33 50 Z" fill="#8E9094"/></g></svg><span><b>Mediawijslab</b><span>gids Kurt</span></span></a></div></div></div>
+    </section>
+
+    <section class="weet" aria-label="Goed om te weten">
+      <div><b>Zonder account</b><span>Je voortgang wordt per leerpad bewaard op je eigen toestel. Niemand anders ziet je antwoorden.</span></div>
+      <div><b>Veilig oefenen</b><span>Alle accounts, berichten en webadressen in de oefeningen zijn verzonnen. Links in de oefeningen werken niet, dus je kan niets fout aanklikken.</span></div>
+      <div><b>In de klas of een workshop</b><span>Reken ongeveer 30 tot 45 minuten per halte. Elke leeftijdsgroep heeft ook een eigen pagina om te delen.</span></div>
+    </section>
+  </main>
+
+  <footer><a href="https://gvermeiren.github.io/promptlab/">Promptlab</a> · <a href="https://gvermeiren.github.io/veiligonlinelab/">Veilig Online Lab</a> · <a href="https://gvermeiren.github.io/mediawijslab/">Mediawijslab</a></footer>
+</div>
+</body>
+</html>
