@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="nl">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leerpaden · voor docenten</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&amp;family=Figtree:wght@600;700&amp;family=JetBrains+Mono:wght@400;700&amp;display=swap">
+<style>
+:root{
+  --bg:#F5F4F0; --surface:#FFFFFF; --sunk:#EAE8E1; --ink:#1D2024; --muted:#5A6068; --line:#D8D5CC;
+  --accent:#2B4C7E; --accent-ink:#FFFFFF; --ok:#1B7F4B; --ok-bg:#DFF3E7; --nok:#B3261E; --nok-bg:#FBE3E0; --goud:#E8A91C; --goud-ink:#3A2700;
+  --f:"Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --fd:"Figtree", "Segoe UI", system-ui, sans-serif; --fm:"JetBrains Mono", ui-monospace, Consolas, monospace;
+  --r:16px; color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root{
+  --bg:#121417; --surface:#1B1E23; --sunk:#252930; --ink:#ECEEF1; --muted:#A2A9B3; --line:#31363E;
+  --accent:#8FB4EE; --accent-ink:#0B1626; --ok:#6AD49B; --ok-bg:#153324; --nok:#FF9A8C; --nok-bg:#3B1C1A; --goud:#F2BE45; --goud-ink:#2E2100; color-scheme:dark }}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.55 var(--f);-webkit-text-size-adjust:100%}
+.wrap{max-width:1040px;margin:0 auto;padding:20px 18px 64px}
+h1,h2,h3{font-family:var(--fd);line-height:1.15;margin:0;letter-spacing:-.01em}
+h1{font-size:clamp(30px,6vw,46px);font-weight:700}
+h2{font-size:24px;font-weight:700;margin:40px 0 6px}
+h3{font-size:19px;font-weight:700}
+p{margin:0 0 10px}
+a{color:var(--accent)}
+.sub{color:var(--muted);margin-bottom:16px}
+.klein{font-size:14.5px;color:var(--muted)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:8px}
+.top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:26px}
+.merk{display:flex;align-items:center;gap:10px;font:700 19px var(--fd);color:var(--ink);text-decoration:none}
+.merk i{display:flex;gap:3px}
+.merk i b{width:11px;height:22px;border-radius:6px;display:block}
+.toplink{font-size:15px;color:var(--muted)}
+.hero p{font-size:18px;color:var(--muted);max-width:60ch;margin-top:10px}
+.koppen{display:flex;margin:18px 0 6px}
+.koppen span{margin-left:-10px;border-radius:50%;box-shadow:0 0 0 3px var(--bg);display:flex}
+.koppen span:first-child{margin-left:0}
+.koppen svg{display:block;border-radius:50%}
+
+/* padkeuze */
+.kies{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0 6px;padding:0;border:0}
+.kies legend{font:700 13px var(--f);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;padding:0}
+.kies button{font:700 16px var(--f);padding:11px 18px;border-radius:999px;border:2px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;min-height:46px}
+.kies button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+/* cijfers */
+.cijfers{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0 4px}
+.cijfer{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:12px 14px}
+.cijfer b{display:block;font:700 26px var(--fd);line-height:1.1}
+.cijfer span{font-size:13.5px;color:var(--muted)}
+
+/* labkaarten */
+.labs{display:grid;gap:16px;grid-template-columns:1fr;margin-top:14px}
+@media (min-width:880px){.labs{grid-template-columns:repeat(3,1fr)}}
+.lab{--la:var(--accent);background:var(--surface);border:1px solid var(--line);border-top:6px solid var(--la);border-radius:var(--r);padding:18px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.lab .kop{display:flex;align-items:center;gap:10px}
+.lab .kop .logo{color:var(--la);display:flex;flex:none}
+.lab .kop .logo svg{width:30px;height:30px}
+.lab .kop .tegen{margin-left:auto;flex:none;display:flex}
+.lab .kop .tegen svg{height:40px;width:auto}
+.lab .thema{color:var(--muted);font-size:15.5px;margin:-6px 0 0}
+.gids{display:flex;align-items:center;gap:10px;background:var(--sunk);border-radius:12px;padding:8px 10px;font-size:15px}
+.gids svg{width:40px;height:40px;flex:none;border-radius:50%;display:block}
+.gids b{display:block;line-height:1.2}
+.balk{height:10px;border-radius:99px;background:var(--sunk);overflow:hidden}
+.balk i{display:block;height:100%;background:var(--la);border-radius:99px;min-width:0;transition:width .5s}
+.stand{display:flex;justify-content:space-between;font-size:14.5px;color:var(--muted);margin-top:-6px}
+.haltes{display:grid;grid-template-columns:repeat(8,1fr);gap:5px;list-style:none;padding:0;margin:0}
+.haltes li{aspect-ratio:1;border-radius:50%;border:2px solid var(--line);display:grid;place-items:center;font:700 12.5px var(--fm);color:var(--muted);position:relative;max-width:40px}
+.haltes li.bezig{border-color:var(--la);color:var(--ink)}
+.haltes li.af{background:var(--goud);border-color:var(--goud);color:var(--goud-ink)}
+.knop{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:700 17px var(--f);padding:13px 18px;border-radius:12px;border:0;background:var(--la,var(--accent));color:#fff;text-decoration:none;cursor:pointer;min-height:50px;margin-top:auto;text-align:center}
+.knop.stil{background:var(--surface);color:var(--ink);border:2px solid var(--line)}
+.knop.klein2{min-height:42px;padding:8px 14px;font-size:15.5px;margin-top:0}
+@media (prefers-color-scheme: dark){.lab .knop{color:#fff;filter:brightness(1.15)}}
+.bewijs{display:flex;align-items:center;gap:8px;font-size:15px;background:var(--ok-bg);color:var(--ok);border-radius:10px;padding:8px 10px;font-weight:700}
+
+/* paspoort */
+.paspoort{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:16px;overflow-x:auto}
+.paspoort table{border-collapse:collapse;width:100%;min-width:520px}
+.paspoort th{font:700 13px var(--f);text-align:left;color:var(--muted);padding:4px 6px;white-space:nowrap}
+.paspoort td{padding:5px 3px;text-align:center}
+.zegel{width:46px;height:46px;border-radius:50%;border:2px dashed var(--line);display:inline-grid;place-items:center;font:700 9.5px/1.05 var(--f);color:var(--muted);padding:3px;text-align:center;overflow:hidden;hyphens:manual}
+.zegel.af{border:0;background:var(--goud);color:var(--goud-ink);transform:rotate(-6deg);box-shadow:inset 0 0 0 2px rgba(255,255,255,.55)}
+
+/* klas */
+.klas{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.velden{display:grid;gap:12px;grid-template-columns:1fr;margin:12px 0}
+@media (min-width:620px){.velden{grid-template-columns:1fr 1fr}}
+label{font-weight:700;font-size:15.5px;display:block}
+label small{font-weight:400;color:var(--muted);display:block}
+input[type=text],textarea{width:100%;font:400 17px var(--f);padding:12px;border-radius:10px;border:2px solid var(--line);background:var(--bg);color:var(--ink);margin-top:6px}
+textarea{font:400 14px/1.4 var(--fm);min-height:110px;resize:vertical;word-break:break-all}
+.code{font:400 14px/1.45 var(--fm);background:var(--sunk);border-radius:10px;padding:12px;word-break:break-all;margin:12px 0;user-select:all}
+.rij{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.melding{border-radius:10px;padding:10px 12px;margin:10px 0;font-size:15.5px}
+.melding.ok{background:var(--ok-bg);color:var(--ok)} .melding.nok{background:var(--nok-bg);color:var(--nok)}
+.uitleg{display:grid;gap:10px;grid-template-columns:1fr;margin-top:10px;padding:0;list-style:none;counter-reset:st}
+@media (min-width:760px){.uitleg{grid-template-columns:repeat(3,1fr)}}
+.uitleg li{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px;counter-increment:st}
+.uitleg li::before{content:counter(st);display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--ink);color:var(--bg);font:700 14px var(--fm);margin-bottom:8px}
+.uitleg b{display:block}
+footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-size:14.5px;color:var(--muted)}
+
+/* docent */
+.tabel{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:var(--r)}
+.tabel table{border-collapse:collapse;width:100%;min-width:640px;font-size:15.5px}
+.tabel th,.tabel td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:middle}
+.tabel th{font:700 13px var(--f);color:var(--muted);letter-spacing:.04em;text-transform:uppercase;white-space:nowrap}
+.tabel tr:last-child td{border-bottom:0}
+.mini{display:flex;align-items:center;gap:8px;white-space:nowrap}
+.mini .balk{width:74px;height:8px;flex:none}
+.mini .balk i{background:var(--la)}
+.stip{display:inline-flex;gap:2px;margin-left:2px}
+.stip i{width:7px;height:7px;border-radius:50%;background:var(--line);display:block}
+.stip i.af{background:var(--goud)}
+.klascode{font:700 30px var(--fm);letter-spacing:.06em;background:var(--sunk);border-radius:12px;padding:10px 16px;display:inline-block}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.tabs button{font:700 15px var(--f);padding:8px 14px;border-radius:999px;border:2px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;min-height:42px}
+.tabs button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.x{border:0;background:none;color:var(--muted);font-size:20px;cursor:pointer;padding:6px 10px;border-radius:8px}
+.leeg{padding:22px;color:var(--muted);text-align:center}
+@media print{.geenprint{display:none!important} body{background:#fff} .tabel{border:0}}
+#klas{text-transform:uppercase}
+.tabel td:nth-child(2),.tabel td:nth-child(3){white-space:nowrap}
+
+</style>
+
+<div class="wrap" id="app"></div>
+
+<script>
+const HUB = {"naam": "Leerpaden", "slogan": "Slim omgaan met AI, internet en nieuws.", "intro": "Drie leerpaden voor jongeren en volwassenen: AI duidelijke vragen stellen, veilig online zijn en nepnieuws herkennen. Kies je leeftijd, kies een leerpad en ga verder waar je gebleven was.", "sleutel": "leerpaden-hub-v1", "labs": [{"naam": "Promptlab", "sleutel": "promptlab-v1", "slogan": "Leer AI de juiste vraag stellen.", "intro": "Een tocht langs 8 haltes en 30 korte lessen. Elke les duurt 5 tot 10 minuten en verbetert zichzelf. Kies je gids.", "logo": "<svg viewBox=\"0 0 32 32\" aria-hidden=\"true\"><path d=\"M12 4h8M13 4v8L6 25a3 3 0 0 0 2.6 4.5h14.8A3 3 0 0 0 26 25l-7-13V4\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path><path d=\"M9.2 21h13.6l2.3 4.4a1.5 1.5 0 0 1-1.3 2.1H8.2a1.5 1.5 0 0 1-1.3-2.1z\" fill=\"currentColor\" opacity=\".35\"><\/path><\/svg>", "tegenspeler": "", "tegenNaam": "", "accent": "#3D46C9", "haltes": [{"naam": "De basis", "lessen": ["1.1", "1.2", "1.3"]}, {"naam": "Duidelijk vragen", "lessen": ["2.1", "2.2", "2.3"]}, {"naam": "Context geven", "lessen": ["3.1", "3.2", "3.3", "3.4"]}, {"naam": "Rollen en stappen", "lessen": ["4.1", "4.2", "4.3", "4.4"]}, {"naam": "Bijsturen", "lessen": ["5.1", "5.2", "5.3", "5.4"]}, {"naam": "Veilig en kritisch", "lessen": ["6.1", "6.2", "6.3", "6.4", "6.5"]}, {"naam": "In de praktijk", "lessen": ["7.1", "7.2", "7.3", "7.4", "7.5"]}, {"naam": "Eindproef", "lessen": ["8.1", "8.2"]}], "paden": {"jong": {"label": "12–14 jaar", "gids": "Nova", "cert": "Promptmeester-diploma", "beloningen": [{"seal": "Starter", "titel": "Badge verdiend: Starter"}, {"seal": "Scherp&shy;steller", "titel": "Badge verdiend: Scherpsteller"}, {"seal": "Context&shy;kenner", "titel": "Badge verdiend: Contextkenner"}, {"seal": "Regis&shy;seur", "titel": "Badge verdiend: Regisseur"}, {"seal": "Bij&shy;sturer", "titel": "Badge verdiend: Bijsturer"}, {"seal": "Speur&shy;neus", "titel": "Badge verdiend: Speurneus"}, {"seal": "Praktijk&shy;pro", "titel": "Badge verdiend: Praktijkpro"}, {"seal": "Prompt&shy;meester", "titel": "Titel verdiend: Promptmeester"}], "portret": "<svg class=\"guide\" viewBox=\"0 0 100 100\" width=\"64\" height=\"64\"  aria-hidden=\"true\"><defs><clipPath id=\"g13\"><circle cx=\"50\" cy=\"50\" r=\"50\"/><\/clipPath><\/defs>\n    <g clip-path=\"url(#g13)\"><rect width=\"100\" height=\"100\" fill=\"#FFD9A8\"/><path d=\"M29 46 C29 28 38 21 50 21 C62 21 71 28 71 46 L71 61 C67 63 63 61 62 57 L38 57 C37 61 33 63 29 61 Z\" fill=\"#5A3A24\"/><rect x=\"45\" y=\"58\" width=\"10\" height=\"14\" fill=\"#F1C19A\"/><path d=\"M14 104 C14 80 30 70 50 70 C70 70 86 80 86 104 Z\" fill=\"#1E9C8F\"/><rect x=\"33\" y=\"73\" width=\"6\" height=\"30\" rx=\"3\" fill=\"#F0AE3A\"/><rect x=\"61\" y=\"73\" width=\"6\" height=\"30\" rx=\"3\" fill=\"#F0AE3A\"/><circle cx=\"31.5\" cy=\"47\" r=\"4\" fill=\"#F1C19A\"/><circle cx=\"68.5\" cy=\"47\" r=\"4\" fill=\"#F1C19A\"/><circle cx=\"50\" cy=\"45\" r=\"19\" fill=\"#F1C19A\"/><path d=\"M39.5 47 Q43 43 46.5 47\" fill=\"none\" stroke=\"#2a1d17\" stroke-width=\"2.4\" stroke-linecap=\"round\"/><path d=\"M53.5 47 Q57 43 60.5 47\" fill=\"none\" stroke=\"#2a1d17\" stroke-width=\"2.4\" stroke-linecap=\"round\"/><path d=\"M43 54 Q50 61.5 57 54\" fill=\"none\" stroke=\"#2a1d17\" stroke-width=\"2.4\" stroke-linecap=\"round\"/><path d=\"M31.5 41 C32 29 41 25 51 25 C61 25 68.5 30 68.5 41 C62 37 56 34.5 50 37 C45 34 37.5 37 31.5 41 Z\" fill=\"#5A3A24\"/>\n      <path d=\"M30.5 35 C31.5 21 68.5 21 69.5 35 Z\" fill=\"#FF6B4A\"/><path d=\"M50 31.5 L79 31.5 Q82 35.5 77.5 36.5 L50 36.5 Z\" fill=\"#D9481F\"/>\n      <circle cx=\"38.5\" cy=\"52\" r=\"3.2\" fill=\"#F08C78\" opacity=\".55\"/><circle cx=\"61.5\" cy=\"52\" r=\"3.2\" fill=\"#F08C78\" opacity=\".55\"/><\/g><\/svg>", "kleur": "#D9481F"}, "tiener": {"label": "15–18 jaar", "gids": "Kai", "cert": "Skillkaart Promptlab", "beloningen": [{"seal": "Level 2", "titel": "Level 2 bereikt · +300 XP"}, {"seal": "Level 3", "titel": "Level 3 bereikt · +300 XP"}, {"seal": "Level 4", "titel": "Level 4 bereikt · +400 XP"}, {"seal": "Level 5", "titel": "Level 5 bereikt · +400 XP"}, {"seal": "Level 6", "titel": "Level 6 bereikt · +500 XP"}, {"seal": "Level 7", "titel": "Level 7 bereikt · +500 XP"}, {"seal": "Level 8", "titel": "Level 8 bereikt · +600 XP"}, {"seal": "Max level", "titel": "Hoogste level bereikt · skillkaart vrijgespeeld"}], "portret": "<svg class=\"guide\" viewBox=\"0 0 100 100\" width=\"64\" height=\"64\"  aria-hidden=\"true\"><defs><clipPath id=\"g14\"><circle cx=\"50\" cy=\"50\" r=\"50\"/><\/clipPath><\/defs>\n    <g clip-path=\"url(#g14)\"><rect width=\"100\" height=\"100\" fill=\"#6E5BD6\"/><rect x=\"45\" y=\"58\" width=\"10\" height=\"14\" fill=\"#8D5A3B\"/><path d=\"M14 104 C14 80 30 70 50 70 C70 70 86 80 86 104 Z\" fill=\"#2B2460\"/><path d=\"M32 71 Q50 87 68 71 L64 68 Q50 79 36 68 Z\" fill=\"#1B1640\"/><path d=\"M45 78 L44 93 M55 78 L56 93\" stroke=\"#E8E4FF\" stroke-width=\"2\" stroke-linecap=\"round\"/>\n      <path d=\"M30 68 C30 87 70 87 70 68\" fill=\"none\" stroke=\"#111\" stroke-width=\"5\"/><rect x=\"25\" y=\"62\" width=\"10\" height=\"15\" rx=\"4\" fill=\"#3FE0D0\"/><rect x=\"65\" y=\"62\" width=\"10\" height=\"15\" rx=\"4\" fill=\"#3FE0D0\"/><circle cx=\"31.5\" cy=\"47\" r=\"4\" fill=\"#8D5A3B\"/><circle cx=\"68.5\" cy=\"47\" r=\"4\" fill=\"#8D5A3B\"/><circle cx=\"50\" cy=\"45\" r=\"19\" fill=\"#8D5A3B\"/><path d=\"M39.5 47 Q43 43 46.5 47\" fill=\"none\" stroke=\"#2a1d17\" stroke-width=\"2.4\" stroke-linecap=\"round\"/><path d=\"M53.5 47 Q57 43 60.5 47\" fill=\"none\" stroke=\"#2a1d17\" stroke-width=\"2.4\" stroke-linecap=\"round\"/><path d=\"M43 54 Q50 61.5 57 54\" fill=\"none\" stroke=\"#2a1d17\" stroke-width=\"2.4\" stroke-linecap=\"round\"/><circle cx=\"36\" cy=\"35\" r=\"8\" fill=\"#161212\"/><circle cx=\"43\" cy=\"28\" r=\"8.5\" fill=\"#161212\"/><circle cx=\"52\" cy=\"25.5\" r=\"8.5\" fill=\"#161212\"/><circle cx=\"61\" cy=\"29\" r=\"8.5\" fill=\"#161212\"/><circle cx=\"67\" cy=\"37\" r=\"6.5\" fill=\"#161212\"/><circle cx=\"33\" cy=\"42\" r=\"5.5\" fill=\"#161212\"/><circle cx=\"49\" cy=\"32\" r=\"8\" fill=\"#161212\"/><\/g><\/svg>", "kleur": "#2CB8AA"}, "volw": {"label": "Volwassenen", "gids": "Sam", "cert": "Deelnamebewijs Promptlab", "beloningen": [{"seal": "1 / 8", "titel": "Onderdeel 1 van 8 afgerond"}, {"seal": "2 / 8", "titel": "Onderdeel 2 van 8 afgerond"}, {"seal": "3 / 8", "titel": "Onderdeel 3 van 8 afgerond"}, {"seal": "4 / 8", "titel": "Onderdeel 4 van 8 afgerond"}, {"seal": "5 / 8", "titel": "Onderdeel 5 van 8 afgerond"}, {"seal": "6 / 8", "titel": "Onderdeel 6 van 8 afgerond"}, {"seal": "7 / 8", "titel": "Onderdeel 7 van 8 afgerond"}, {"seal": "8 / 8", "titel": "Alle onderdelen afgerond"}], "portret": "<svg class=\"guide\" viewBox=\"0 0 100 100\" width=\"64\" height=\"64\"  aria-hidden=\"true\"><defs><clipPath id=\"g15\"><circle cx=\"50\" cy=\"50\" r=\"50\"/><\/clipPath><\/defs>\n    <g clip-path=\"url(#g15)\"><rect width=\"100\" height=\"100\" fill=\"#A9D6C2\"/><rect x=\"45\" y=\"58\" width=\"10\" height=\"14\" fill=\"#E3B58F\"/><path d=\"M14 104 C14 80 30 70 50 70 C70 70 86 80 86 104 Z\" fill=\"#2E5E73\"/><path d=\"M41 69 L50 81 L50 70 Z\" fill=\"#F4F4EE\"/><path d=\"M59 69 L50 81 L50 70 Z\" fill=\"#F4F4EE\"/><circle cx=\"31.5\" cy=\"47\" r=\"4\" fill=\"#E3B58F\"/><circle cx=\"68.5\" cy=\"47\" r=\"4\" fill=\"#E3B58F\"/><circle cx=\"50\" cy=\"45\" r=\"19\" fill=\"#E3B58F\"/><path d=\"M39.5 47 Q43 43 46.5 47\" fill=\"none\" stroke=\"#2a1d17\" stroke-width=\"2.4\" stroke-linecap=\"round\"/><path d=\"M53.5 47 Q57 43 60.5 47\" fill=\"none\" stroke=\"#2a1d17\" stroke-width=\"2.4\" stroke-linecap=\"round\"/><path d=\"M43 54 Q50 61.5 57 54\" fill=\"none\" stroke=\"#2a1d17\" stroke-width=\"2.4\" stroke-linecap=\"round\"/><path d=\"M31 43 C30 26 42 20.5 52 21.5 C64 22.5 71 30 69.5 43 C64 34 54 31 44 34 C38 36 33.5 39 31 43 Z\" fill=\"#7A6655\"/>\n      <path d=\"M53 22.3 C61 23.5 67 28 68.5 35 C62 30 56 28 49.5 28 Z\" fill=\"#B3ABA2\"/>\n      <circle cx=\"43\" cy=\"46\" r=\"5.8\" fill=\"none\" stroke=\"#2a2a2a\" stroke-width=\"1.8\"/><circle cx=\"57\" cy=\"46\" r=\"5.8\" fill=\"none\" stroke=\"#2a2a2a\" stroke-width=\"1.8\"/><path d=\"M48.8 46 L51.2 46\" stroke=\"#2a2a2a\" stroke-width=\"1.8\"/><\/g><\/svg>", "kleur": "#1F6B57"}}, "url": "promptlab/", "thema": "Duidelijk vragen, context geven en bijsturen, en de antwoorden kritisch bekijken.", "paginas": {"jong": "promptlab-12-14.html", "tiener": "promptlab-15-18.html", "volw": "promptlab-volwassenen.html"}}, {"naam": "Veilig Online Lab", "sleutel": "veilig-online-lab-v1", "slogan": "Word slimmer dan de Kameleon.", "intro": "Een metrolijn met 8 haltes en 30 korte lessen over veilig online zijn. Elke les duurt 5 tot 10 minuten en verbetert zichzelf. Kies je gids.", "logo": "<svg viewBox=\"0 0 32 32\" aria-hidden=\"true\"><path d=\"M16 3l11 4v8c0 7-4.6 12-11 14C9.6 27 5 22 5 15V7z\" fill=\"currentColor\" opacity=\".18\"><\/path><path d=\"M16 3l11 4v8c0 7-4.6 12-11 14C9.6 27 5 22 5 15V7z\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linejoin=\"round\"><\/path><circle cx=\"16\" cy=\"14\" r=\"3.2\" fill=\"currentColor\"><\/circle><path d=\"M14.6 16.5h2.8l.8 5h-4.4z\" fill=\"currentColor\"><\/path><\/svg>", "tegenspeler": "<svg class=\"kam\" viewBox=\"0 0 72 52\" width=\"72\" height=\"52\" aria-hidden=\"true\"><path d=\"M10 38 C4 38 2 31 7 28 C11 26 14 30 11 32 C9 33 8 31 9 30\" fill=\"none\" stroke=\"#3E9A35\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><path d=\"M12 36 C14 22 28 14 42 16 C52 17 60 22 64 30 C66 35 62 38 56 37 L50 36 C44 40 30 42 20 40 Z\" fill=\"#5BBF4E\"/><path d=\"M26 22 C30 19 36 18 40 19\" fill=\"none\" stroke=\"#3E9A35\" stroke-width=\"2\" stroke-linecap=\"round\"/><path d=\"M20 38 L18 46 M30 40 L30 48 M44 38 L46 46\" stroke=\"#3E9A35\" stroke-width=\"3\" stroke-linecap=\"round\"/><circle cx=\"54\" cy=\"26\" r=\"7\" fill=\"#FFFFFF\" stroke=\"#3E9A35\" stroke-width=\"2\"/><circle cx=\"56\" cy=\"26\" r=\"3\" fill=\"#1d1d1d\"/><path d=\"M60 33 Q64 35 66 32\" fill=\"none\" stroke=\"#2c6e26\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><path d=\"M38 24 l3 4 -3 4 M44 24 l3 4 -3 4\" fill=\"none\" stroke=\"#3E9A35\" stroke-width=\"1.6\" opacity=\".6\"/><\/svg>", "tegenNaam": "De Kameleon", "accent": "#C8283A", "haltes": [{"naam": "De basis", "lessen": ["1.1", "1.2", "1.3"]}, {"naam": "Sterke wachtwoorden", "lessen": ["2.1", "2.2", "2.3", "2.4"]}, {"naam": "Tweestapsverificatie", "lessen": ["3.1", "3.2", "3.3"]}, {"naam": "Phishing herkennen", "lessen": ["4.1", "4.2", "4.3", "4.4", "4.5"]}, {"naam": "Oplichting doorzien", "lessen": ["5.1", "5.2", "5.3", "5.4"]}, {"naam": "Privacy", "lessen": ["6.1", "6.2", "6.3", "6.4"]}, {"naam": "Toestellen en wifi", "lessen": ["7.1", "7.2", "7.3", "7.4"]}, {"naam": "Eindproef", "lessen": ["8.1", "8.2", "8.3"]}], "paden": {"jong": {"label": "12–14 jaar", "gids": "Juno", "cert": "Cyberheld-diploma", "beloningen": [{"seal": "Ver&shy;kenner", "titel": "Badge verdiend: Verkenner"}, {"seal": "Slot&shy;maker", "titel": "Badge verdiend: Slotmaker"}, {"seal": "Dubbel slot", "titel": "Badge verdiend: Dubbel slot"}, {"seal": "Nep&shy;speurder", "titel": "Badge verdiend: Nepspeurder"}, {"seal": "Ont&shy;maskeraar", "titel": "Badge verdiend: Ontmaskeraar"}, {"seal": "Privacy&shy;bewaker", "titel": "Badge verdiend: Privacybewaker"}, {"seal": "Toestel&shy;tuner", "titel": "Badge verdiend: Toesteltuner"}, {"seal": "Cyber&shy;held", "titel": "Titel verdiend: Cyberheld"}], "portret": "<svg class=\"guide\" viewBox=\"0 0 100 100\" width=\"64\" height=\"64\"  aria-hidden=\"true\"><defs><clipPath id=\"g13\"><circle cx=\"50\" cy=\"50\" r=\"50\"/><\/clipPath><\/defs>\n    <g clip-path=\"url(#g13)\"><rect width=\"100\" height=\"100\" fill=\"#FFE08A\"/><circle cx=\"32\" cy=\"27\" r=\"9.5\" fill=\"#2B1B12\"/><circle cx=\"68\" cy=\"27\" r=\"9.5\" fill=\"#2B1B12\"/><rect x=\"45\" y=\"58\" width=\"10\" height=\"14\" fill=\"#B97A50\"/><path d=\"M14 104 C14 80 30 70 50 70 C70 70 86 80 86 104 Z\" fill=\"#E2363E\"/><path d=\"M30 72 Q50 64 70 72 L66 80 Q50 74 34 80 Z\" fill=\"#B8222A\"/><path d=\"M45 76 L44 90 M55 76 L56 90\" stroke=\"#FFE08A\" stroke-width=\"2\" stroke-linecap=\"round\"/><circle cx=\"31.5\" cy=\"47\" r=\"4\" fill=\"#B97A50\"/><circle cx=\"68.5\" cy=\"47\" r=\"4\" fill=\"#B97A50\"/><circle cx=\"50\" cy=\"45\" r=\"19\" fill=\"#B97A50\"/><path d=\"M39.5 47 Q43 43 46.5 47\" fill=\"none\" stroke=\"#2a1d17\" stroke-width=\"2.4\" stroke-linecap=\"round\"/><path d=\"M53.5 47 Q57 43 60.5 47\" fill=\"none\" stroke=\"#2a1d17\" stroke-width=\"2.4\" stroke-linecap=\"round\"/><path d=\"M43 54 Q50 61.5 57 54\" fill=\"none\" stroke=\"#2a1d17\" stroke-width=\"2.4\" stroke-linecap=\"round\"/><path d=\"M31 43 C31 27 41 24 50 24 C59 24 69 27 69 43 C63 35 57 33 50 33 C43 33 37 35 31 43 Z\" fill=\"#2B1B12\"/><path d=\"M62 27 l1.6 3.2 3.5.5-2.5 2.5.6 3.5-3.2-1.7-3.2 1.7.6-3.5-2.5-2.5 3.5-.5z\" fill=\"#FFC23D\"/><circle cx=\"38.5\" cy=\"52\" r=\"3.2\" fill=\"#E37A6C\" opacity=\".5\"/><circle cx=\"61.5\" cy=\"52\" r=\"3.2\" fill=\"#E37A6C\" opacity=\".5\"/><\/g><\/svg>", "kleur": "#E2363E"}, "tiener": {"label": "15–18 jaar", "gids": "Ravi", "cert": "Skillkaart Veilig Online Lab", "beloningen": [{"seal": "Level 2", "titel": "Level 2 bereikt · +300 XP"}, {"seal": "Level 3", "titel": "Level 3 bereikt · +300 XP"}, {"seal": "Level 4", "titel": "Level 4 bereikt · +400 XP"}, {"seal": "Level 5", "titel": "Level 5 bereikt · +500 XP"}, {"seal": "Level 6", "titel": "Level 6 bereikt · +500 XP"}, {"seal": "Level 7", "titel": "Level 7 bereikt · +600 XP"}, {"seal": "Level 8", "titel": "Level 8 bereikt · +600 XP"}, {"seal": "Max level", "titel": "Hoogste level bereikt · skillkaart vrijgespeeld"}], "portret": "<svg class=\"guide\" viewBox=\"0 0 100 100\" width=\"64\" height=\"64\"  aria-hidden=\"true\"><defs><clipPath id=\"g14\"><circle cx=\"50\" cy=\"50\" r=\"50\"/><\/clipPath><\/defs>\n    <g clip-path=\"url(#g14)\"><rect width=\"100\" height=\"100\" fill=\"#0F3A2D\"/><rect x=\"45\" y=\"58\" width=\"10\" height=\"14\" fill=\"#9C6440\"/><path d=\"M14 104 C14 80 30 70 50 70 C70 70 86 80 86 104 Z\" fill=\"#1B2430\"/><path d=\"M32 71 Q50 86 68 71 L64 68 Q50 78 36 68 Z\" fill=\"#0E141B\"/><path d=\"M45 77 L44 92 M55 77 L56 92\" stroke=\"#00E5A0\" stroke-width=\"2\" stroke-linecap=\"round\"/><circle cx=\"31.5\" cy=\"47\" r=\"4\" fill=\"#9C6440\"/><circle cx=\"68.5\" cy=\"47\" r=\"4\" fill=\"#9C6440\"/><circle cx=\"50\" cy=\"45\" r=\"19\" fill=\"#9C6440\"/><path d=\"M39.5 47 Q43 43 46.5 47\" fill=\"none\" stroke=\"#2a1d17\" stroke-width=\"2.4\" stroke-linecap=\"round\"/><path d=\"M53.5 47 Q57 43 60.5 47\" fill=\"none\" stroke=\"#2a1d17\" stroke-width=\"2.4\" stroke-linecap=\"round\"/><path d=\"M43 54 Q50 61.5 57 54\" fill=\"none\" stroke=\"#2a1d17\" stroke-width=\"2.4\" stroke-linecap=\"round\"/><path d=\"M30.5 40 C30 22 70 22 69.5 40 Z\" fill=\"#00E5A0\"/><rect x=\"30\" y=\"35\" width=\"40\" height=\"7\" rx=\"3\" fill=\"#00B47E\"/><circle cx=\"50\" cy=\"22\" r=\"3.5\" fill=\"#00E5A0\"/><circle cx=\"43\" cy=\"47\" r=\"5.6\" fill=\"none\" stroke=\"#0E141B\" stroke-width=\"1.8\"/><circle cx=\"57\" cy=\"47\" r=\"5.6\" fill=\"none\" stroke=\"#0E141B\" stroke-width=\"1.8\"/><path d=\"M48.6 47 L51.4 47\" stroke=\"#0E141B\" stroke-width=\"1.8\"/><\/g><\/svg>", "kleur": "#00A97A"}, "volw": {"label": "Volwassenen", "gids": "Ines", "cert": "Deelnamebewijs Veilig Online Lab", "beloningen": [{"seal": "1 / 8", "titel": "Onderdeel 1 van 8 afgerond"}, {"seal": "2 / 8", "titel": "Onderdeel 2 van 8 afgerond"}, {"seal": "3 / 8", "titel": "Onderdeel 3 van 8 afgerond"}, {"seal": "4 / 8", "titel": "Onderdeel 4 van 8 afgerond"}, {"seal": "5 / 8", "titel": "Onderdeel 5 van 8 afgerond"}, {"seal": "6 / 8", "titel": "Onderdeel 6 van 8 afgerond"}, {"seal": "7 / 8", "titel": "Onderdeel 7 van 8 afgerond"}, {"seal": "8 / 8", "titel": "Alle onderdelen afgerond"}], "portret": "<svg class=\"guide\" viewBox=\"0 0 100 100\" width=\"64\" height=\"64\"  aria-hidden=\"true\"><defs><clipPath id=\"g15\"><circle cx=\"50\" cy=\"50\" r=\"50\"/><\/clipPath><\/defs>\n    <g clip-path=\"url(#g15)\"><rect width=\"100\" height=\"100\" fill=\"#CFE0F3\"/><path d=\"M28 48 C27 27 39 22 50 22 C61 22 73 27 72 48 L72 61 C68 61 66 58 66 53 L34 53 C34 58 32 61 28 61 Z\" fill=\"#A6532E\"/><rect x=\"45\" y=\"58\" width=\"10\" height=\"14\" fill=\"#F0C7A6\"/><path d=\"M14 104 C14 80 30 70 50 70 C70 70 86 80 86 104 Z\" fill=\"#1F3B63\"/><path d=\"M40 69 L50 86 L60 69 Z\" fill=\"#F4F4EE\"/><path d=\"M38 69 L50 92 L44 104 L30 104 Z\" fill=\"#162C4A\"/><path d=\"M62 69 L50 92 L56 104 L70 104 Z\" fill=\"#162C4A\"/><path d=\"M42 72 L52 88 M58 72 L52 88\" stroke=\"#E8B23A\" stroke-width=\"1.6\"/><rect x=\"47.5\" y=\"87\" width=\"10\" height=\"13\" rx=\"2\" fill=\"#FFFFFF\" stroke=\"#E8B23A\" stroke-width=\"1.4\"/><circle cx=\"31.5\" cy=\"47\" r=\"4\" fill=\"#F0C7A6\"/><circle cx=\"68.5\" cy=\"47\" r=\"4\" fill=\"#F0C7A6\"/><circle cx=\"50\" cy=\"45\" r=\"19\" fill=\"#F0C7A6\"/><path d=\"M39.5 47 Q43 43 46.5 47\" fill=\"none\" stroke=\"#2a1d17\" stroke-width=\"2.4\" stroke-linecap=\"round\"/><path d=\"M53.5 47 Q57 43 60.5 47\" fill=\"none\" stroke=\"#2a1d17\" stroke-width=\"2.4\" stroke-linecap=\"round\"/><path d=\"M43 54 Q50 61.5 57 54\" fill=\"none\" stroke=\"#2a1d17\" stroke-width=\"2.4\" stroke-linecap=\"round\"/><path d=\"M31 41 C33 28 42 25 51 25 C60 25 67 29 69 41 C60 35 50 33 40 37 C36 38 33 39 31 41 Z\" fill=\"#A6532E\"/><\/g><\/svg>", "kleur": "#1F5FAD"}}, "url": "veiligonlinelab/", "thema": "Sterke wachtwoorden, tweestapsverificatie en oplichting doorprikken.", "paginas": {"jong": "veilig-online-lab-12-14.html", "tiener": "veilig-online-lab-15-18.html", "volw": "veilig-online-lab-volwassenen.html"}}, {"naam": "Mediawijslab", "sleutel": "mediawijslab-v1", "slogan": "Laat het Gerucht niet groeien.", "intro": "Een speurbord met 8 haltes en 30 korte lessen over nepnieuws, bronnen, beelden en cijfers. Elke les duurt 5 tot 10 minuten en verbetert zichzelf. Kies je gids.", "logo": "<svg viewBox=\"0 0 32 32\" aria-hidden=\"true\"><circle cx=\"13.5\" cy=\"13.5\" r=\"9.5\" fill=\"currentColor\" opacity=\".16\"><\/circle><circle cx=\"13.5\" cy=\"13.5\" r=\"9.5\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.6\"><\/circle><path d=\"M20.5 20.5L28 28\" stroke=\"currentColor\" stroke-width=\"3.2\" stroke-linecap=\"round\"><\/path><path d=\"M9.5 13.8l2.8 2.8 5.2-5.6\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2.4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><\/path><\/svg>", "tegenspeler": "<svg class=\"gerucht\" viewBox=\"0 0 80 56\" width=\"72\" height=\"50\" aria-hidden=\"true\"><path d=\"M18 46 C7 46 4 35 12 31 C9 20 22 13 30 19 C33 9 50 8 54 18 C63 14 73 22 69 31 C77 34 75 46 65 46 Z\" fill=\"#B9A6E8\" stroke=\"#6E56B8\" stroke-width=\"2\"/><circle cx=\"33\" cy=\"30\" r=\"4.6\" fill=\"#fff\"/><circle cx=\"34\" cy=\"31\" r=\"2.2\" fill=\"#2a1d17\"/><circle cx=\"49\" cy=\"30\" r=\"4.6\" fill=\"#fff\"/><circle cx=\"50\" cy=\"31\" r=\"2.2\" fill=\"#2a1d17\"/><ellipse cx=\"41\" cy=\"39\" rx=\"3.4\" ry=\"2.4\" fill=\"#2a1d17\"/><path d=\"M72 18 q4 -3 7 0 M71 11 q6 -5 11 0\" fill=\"none\" stroke=\"#6E56B8\" stroke-width=\"1.8\" stroke-linecap=\"round\"/><path d=\"M8 52 q-3 2 -6 0\" fill=\"none\" stroke=\"#6E56B8\" stroke-width=\"1.6\" stroke-linecap=\"round\"/><\/svg>", "tegenNaam": "Het Gerucht", "accent": "#B3261E", "haltes": [{"naam": "De basis", "lessen": ["1.1", "1.2", "1.3"]}, {"naam": "Bronnen checken", "lessen": ["2.1", "2.2", "2.3", "2.4"]}, {"naam": "Beelden en video", "lessen": ["3.1", "3.2", "3.3", "3.4"]}, {"naam": "Cijfers en grafieken", "lessen": ["4.1", "4.2", "4.3"]}, {"naam": "Hoe je feed werkt", "lessen": ["5.1", "5.2", "5.3", "5.4"]}, {"naam": "Trucs van misleiding", "lessen": ["6.1", "6.2", "6.3", "6.4"]}, {"naam": "Zelf checken en delen", "lessen": ["7.1", "7.2", "7.3", "7.4", "7.5"]}, {"naam": "Eindproef", "lessen": ["8.1", "8.2", "8.3"]}], "paden": {"jong": {"label": "12–14 jaar", "gids": "Arne", "cert": "Feitenspeurder-diploma", "beloningen": [{"seal": "Nieuws&shy;gierig", "titel": "Badge verdiend: Nieuwsgierig"}, {"seal": "Bron&shy;speurder", "titel": "Badge verdiend: Bronspeurder"}, {"seal": "Beeld&shy;detective", "titel": "Badge verdiend: Beelddetective"}, {"seal": "Cijfer&shy;kraker", "titel": "Badge verdiend: Cijferkraker"}, {"seal": "Feed&shy;baas", "titel": "Badge verdiend: Feedbaas"}, {"seal": "Trucjes&shy;kenner", "titel": "Badge verdiend: Trucjeskenner"}, {"seal": "Ketting&shy;breker", "titel": "Badge verdiend: Kettingbreker"}, {"seal": "Feiten&shy;speurder", "titel": "Titel verdiend: Feitenspeurder"}], "portret": "<svg class=\"guide\" viewBox=\"0 0 100 100\" width=\"64\" height=\"64\"  aria-hidden=\"true\"><defs><clipPath id=\"g13\"><circle cx=\"50\" cy=\"50\" r=\"50\"/><\/clipPath><\/defs>\n    <g clip-path=\"url(#g13)\"><rect width=\"100\" height=\"100\" fill=\"#FFD27A\"/><rect x=\"45\" y=\"58\" width=\"10\" height=\"14\" fill=\"#E8B48F\"/><path d=\"M14 104 C14 80 30 70 50 70 C70 70 86 80 86 104 Z\" fill=\"#E8590C\"/><path d=\"M36 70 L50 92 L64 70\" fill=\"none\" stroke=\"#3B2A20\" stroke-width=\"2\"/><rect x=\"41\" y=\"86\" width=\"18\" height=\"12\" rx=\"3\" fill=\"#2E3440\"/><circle cx=\"50\" cy=\"92\" r=\"4\" fill=\"#9FB4C7\" stroke=\"#1C2128\" stroke-width=\"1.5\"/><rect x=\"53\" y=\"87.5\" width=\"4\" height=\"2.5\" rx=\"1\" fill=\"#FFD27A\"/><circle cx=\"31.5\" cy=\"47\" r=\"4\" fill=\"#E8B48F\"/><circle cx=\"68.5\" cy=\"47\" r=\"4\" fill=\"#E8B48F\"/><circle cx=\"50\" cy=\"45\" r=\"19\" fill=\"#E8B48F\"/><path d=\"M39.5 47 Q43 43 46.5 47\" fill=\"none\" stroke=\"#2a1d17\" stroke-width=\"2.4\" stroke-linecap=\"round\"/><path d=\"M53.5 47 Q57 43 60.5 47\" fill=\"none\" stroke=\"#2a1d17\" stroke-width=\"2.4\" stroke-linecap=\"round\"/><path d=\"M43 54 Q50 61.5 57 54\" fill=\"none\" stroke=\"#2a1d17\" stroke-width=\"2.4\" stroke-linecap=\"round\"/><path d=\"M30.5 44 C29 30 37 23 46 24 C47 20 55 20 57 24 C66 23 72 31 69.5 44 C67 37 64 35 60 34 C61 38 58 39 56 36 C53 39 48 39 46 35 C43 38 39 38 40 34 C35 35 32 38 30.5 44 Z\" fill=\"#7A4A26\"/><circle cx=\"38.5\" cy=\"52\" r=\"3\" fill=\"#E37A6C\" opacity=\".45\"/><circle cx=\"61.5\" cy=\"52\" r=\"3\" fill=\"#E37A6C\" opacity=\".45\"/><\/g><\/svg>", "kleur": "#E8590C"}, "tiener": {"label": "15–18 jaar", "gids": "Noor", "cert": "Skillkaart Mediawijslab", "beloningen": [{"seal": "Level 2", "titel": "Level 2 bereikt · +300 XP"}, {"seal": "Level 3", "titel": "Level 3 bereikt · +300 XP"}, {"seal": "Level 4", "titel": "Level 4 bereikt · +300 XP"}, {"seal": "Level 5", "titel": "Level 5 bereikt · +300 XP"}, {"seal": "Level 6", "titel": "Level 6 bereikt · +300 XP"}, {"seal": "Level 7", "titel": "Level 7 bereikt · +300 XP"}, {"seal": "Level 8", "titel": "Level 8 bereikt · +300 XP"}, {"seal": "Max level", "titel": "Hoogste level bereikt · skillkaart vrijgespeeld"}], "portret": "<svg class=\"guide\" viewBox=\"0 0 100 100\" width=\"64\" height=\"64\"  aria-hidden=\"true\"><defs><clipPath id=\"g14\"><circle cx=\"50\" cy=\"50\" r=\"50\"/><\/clipPath><\/defs>\n    <g clip-path=\"url(#g14)\"><rect width=\"100\" height=\"100\" fill=\"#2A1A24\"/><path d=\"M29 44 C28 24 40 21 50 21 C60 21 72 24 71 44 L74 86 C66 90 60 86 58 80 L42 80 C40 86 34 90 26 86 Z\" fill=\"#1E1412\"/><rect x=\"45\" y=\"58\" width=\"10\" height=\"14\" fill=\"#C68A63\"/><path d=\"M14 104 C14 80 30 70 50 70 C70 70 86 80 86 104 Z\" fill=\"#1F8A8A\"/><path d=\"M34 72 L42 104 M66 72 L58 104\" stroke=\"#167272\" stroke-width=\"5\"/><circle cx=\"31.5\" cy=\"47\" r=\"4\" fill=\"#C68A63\"/><circle cx=\"68.5\" cy=\"47\" r=\"4\" fill=\"#C68A63\"/><circle cx=\"50\" cy=\"45\" r=\"19\" fill=\"#C68A63\"/><path d=\"M39.5 47 Q43 43 46.5 47\" fill=\"none\" stroke=\"#2a1d17\" stroke-width=\"2.4\" stroke-linecap=\"round\"/><path d=\"M53.5 47 Q57 43 60.5 47\" fill=\"none\" stroke=\"#2a1d17\" stroke-width=\"2.4\" stroke-linecap=\"round\"/><path d=\"M43 54 Q50 61.5 57 54\" fill=\"none\" stroke=\"#2a1d17\" stroke-width=\"2.4\" stroke-linecap=\"round\"/><path d=\"M31 42 C32 28 41 24 50 24 C60 24 68 28 69 42 C63 34 56 31 49 31 C43 32 36 36 31 42 Z\" fill=\"#1E1412\"/><circle cx=\"43\" cy=\"47\" r=\"5.6\" fill=\"none\" stroke=\"#C9A227\" stroke-width=\"1.8\"/><circle cx=\"57\" cy=\"47\" r=\"5.6\" fill=\"none\" stroke=\"#C9A227\" stroke-width=\"1.8\"/><path d=\"M48.6 47 L51.4 47\" stroke=\"#C9A227\" stroke-width=\"1.8\"/><path d=\"M66 30 L76 40\" stroke=\"#F2C14E\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><path d=\"M75 39 L78 42\" stroke=\"#2a1d17\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><\/g><\/svg>", "kleur": "#D7263D"}, "volw": {"label": "Volwassenen", "gids": "Kurt", "cert": "Deelnamebewijs Mediawijslab", "beloningen": [{"seal": "1 / 8", "titel": "Onderdeel 1 van 8 afgerond"}, {"seal": "2 / 8", "titel": "Onderdeel 2 van 8 afgerond"}, {"seal": "3 / 8", "titel": "Onderdeel 3 van 8 afgerond"}, {"seal": "4 / 8", "titel": "Onderdeel 4 van 8 afgerond"}, {"seal": "5 / 8", "titel": "Onderdeel 5 van 8 afgerond"}, {"seal": "6 / 8", "titel": "Onderdeel 6 van 8 afgerond"}, {"seal": "7 / 8", "titel": "Onderdeel 7 van 8 afgerond"}, {"seal": "8 / 8", "titel": "Alle onderdelen afgerond"}], "portret": "<svg class=\"guide\" viewBox=\"0 0 100 100\" width=\"64\" height=\"64\"  aria-hidden=\"true\"><defs><clipPath id=\"g15\"><circle cx=\"50\" cy=\"50\" r=\"50\"/><\/clipPath><\/defs>\n    <g clip-path=\"url(#g15)\"><rect width=\"100\" height=\"100\" fill=\"#DCE3EA\"/><rect x=\"45\" y=\"58\" width=\"10\" height=\"14\" fill=\"#EAC3A2\"/><path d=\"M14 104 C14 80 30 70 50 70 C70 70 86 80 86 104 Z\" fill=\"#2B3A55\"/><path d=\"M40 70 L50 86 L60 70 Z\" fill=\"#F3F5F8\"/><path d=\"M38 70 L50 92 L44 104 L30 104 Z\" fill=\"#1E2A3E\"/><path d=\"M62 70 L50 92 L56 104 L70 104 Z\" fill=\"#1E2A3E\"/><rect x=\"60\" y=\"82\" width=\"9\" height=\"2.5\" fill=\"#C9D3DE\"/><path d=\"M63 76 L63 83\" stroke=\"#B3261E\" stroke-width=\"2\" stroke-linecap=\"round\"/><circle cx=\"31.5\" cy=\"47\" r=\"4\" fill=\"#EAC3A2\"/><circle cx=\"68.5\" cy=\"47\" r=\"4\" fill=\"#EAC3A2\"/><circle cx=\"50\" cy=\"45\" r=\"19\" fill=\"#EAC3A2\"/><path d=\"M39.5 47 Q43 43 46.5 47\" fill=\"none\" stroke=\"#2a1d17\" stroke-width=\"2.4\" stroke-linecap=\"round\"/><path d=\"M53.5 47 Q57 43 60.5 47\" fill=\"none\" stroke=\"#2a1d17\" stroke-width=\"2.4\" stroke-linecap=\"round\"/><path d=\"M43 54 Q50 61.5 57 54\" fill=\"none\" stroke=\"#2a1d17\" stroke-width=\"2.4\" stroke-linecap=\"round\"/><path d=\"M31 41 C32 29 41 25 50 25 C59 25 68 29 69 41 C64 35 58 33 50 33 C42 33 36 35 31 41 Z\" fill=\"#A7A9AC\"/><path d=\"M33 50 C34 62 42 66 50 66 C58 66 66 62 67 50 C64 57 58 59 50 59 C42 59 36 57 33 50 Z\" fill=\"#8E9094\"/><\/g><\/svg>", "kleur": "#1F4E8C"}}, "url": "mediawijslab/", "thema": "Bronnen, beelden en cijfers checken en bewust delen.", "paginas": {"jong": "mediawijslab-12-14.html", "tiener": "mediawijslab-15-18.html", "volw": "mediawijslab-volwassenen.html"}}]};
+/* ===== Lab-hub: gedeelde functies (startpagina en docentenpagina) ===== */
+const PADEN = ['jong', 'tiener', 'volw'];
+const PADNAAM = {jong: '12–14 jaar', tiener: '15–18 jaar', volw: 'Volwassenen'};
+const $ = (s, r = document) => r.querySelector(s);
+const h = (tag, attrs, ...kids) => {
+  const e = document.createElement(tag);
+  for(const [k, v] of Object.entries(attrs || {})){
+    if(v == null || v === false) continue;
+    if(k === 'html') e.innerHTML = v; else if(k.startsWith('on')) e.addEventListener(k.slice(2), v); else e.setAttribute(k, v === true ? '' : v);
+  }
+  for(const k of kids.flat()) if(k != null && k !== false) e.append(k.nodeType ? k : document.createTextNode(k));
+  return e;
+};
+const bewaard = (sleutel, standaard) => { try { const v = JSON.parse(localStorage.getItem(sleutel)); return v == null ? standaard : v; } catch(e){ return standaard; } };
+const bewaar = (sleutel, v) => { try { localStorage.setItem(sleutel, JSON.stringify(v)); return true; } catch(e){ return false; } };
+
+/* Voortgang van één lab en één pad, gelezen uit de opslag van dat lab (zelfde website, dus zelfde opslag). */
+function voortgang(lab, pad){
+  const s = bewaard(lab.sleutel, {}) || {};
+  const klaar = (s.done && s.done[pad]) || {}, score = (s.score && s.score[pad]) || {};
+  const ids = lab.haltes.flatMap(x => x.lessen);
+  let goed = 0, tot = 0;
+  for(const id of ids){ const [a, b] = String(score[id] || '').split('/').map(Number); if(b){ goed += a; tot += b; } }
+  return maakVoortgang(lab, ids.map(id => !!klaar[id]), goed, tot);
+}
+function maakVoortgang(lab, bits, goed, tot){
+  let i = 0;
+  const haltes = lab.haltes.map(x => { const deel = bits.slice(i, i + x.lessen.length); i += x.lessen.length; return {naam: x.naam, n: deel.length, klaar: deel.filter(Boolean).length}; });
+  const gedaan = bits.filter(Boolean).length;
+  return {bits, haltes, gedaan, totaal: bits.length, haltesKlaar: haltes.filter(x => x.n && x.klaar === x.n).length, af: bits.length > 0 && gedaan === bits.length, goed, tot};
+}
+
+/* ---------- voortgangscode ----------
+   Eén regel tekst met: klascode, schuilnaam, pad, datum en per lab welke lessen af zijn en de score.
+   Er zit niets anders in. De code wordt nergens naartoe gestuurd; de leerling geeft ze zelf door. */
+const b64 = {
+  naar: t => btoa(String.fromCharCode(...new TextEncoder().encode(t))).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, ''),
+  van: c => new TextDecoder().decode(Uint8Array.from(atob(c.replace(/-/g, '+').replace(/_/g, '/')), x => x.charCodeAt(0)))
+};
+const som = t => { let x = 7; for(const c of t) x = (x * 31 + c.charCodeAt(0)) % 46656; return x.toString(36).padStart(3, '0'); };
+const bitsNaarHex = bits => { let uit = ''; for(let i = 0; i < bits.length; i += 4) uit += parseInt([0, 1, 2, 3].map(k => bits[i + k] ? 1 : 0).join(''), 2).toString(16); return uit; };
+const hexNaarBits = (hex, n) => { const uit = []; for(const c of hex) uit.push(...parseInt(c, 16).toString(2).padStart(4, '0').split('').map(x => x === '1')); return uit.slice(0, n); };
+
+function maakCode(klas, naam, pad){
+  const labs = {};
+  for(const lab of HUB.labs){ const v = voortgang(lab, pad); labs[lab.sleutel] = [bitsNaarHex(v.bits), v.goed, v.tot]; }
+  const kern = b64.naar(JSON.stringify({k: klas, n: naam, p: pad, d: Math.floor(Date.now() / 86400000), l: labs}));
+  return 'LAB1.' + kern + '.' + som(kern);
+}
+/* Geeft {klas, naam, pad, dag, labs:{sleutel: voortgang}} of gooit een fout met een leesbare boodschap. */
+function leesCode(code){
+  const m = String(code).trim().match(/^LAB1\.([A-Za-z0-9_-]+)\.([0-9a-z]{3})$/);
+  if(!m) throw new Error('Dit is geen voortgangscode. Een code begint met LAB1.');
+  if(som(m[1]) !== m[2]) throw new Error('De code is onvolledig of er zit een tikfout in. Kopieer ze opnieuw.');
+  let d; try { d = JSON.parse(b64.van(m[1])); } catch(e){ throw new Error('De code kan niet gelezen worden.'); }
+  if(!PADEN.includes(d.p)) throw new Error('De code bevat een onbekend pad.');
+  const labs = {};
+  for(const lab of HUB.labs){
+    const r = (d.l || {})[lab.sleutel]; if(!r) continue;
+    const n = lab.haltes.reduce((s, x) => s + x.lessen.length, 0);
+    labs[lab.sleutel] = maakVoortgang(lab, hexNaarBits(String(r[0]), n), +r[1] || 0, +r[2] || 0);
+  }
+  return {klas: String(d.k || '').slice(0, 20), naam: String(d.n || '').slice(0, 30), pad: d.p, dag: +d.d || 0, labs};
+}
+const datum = dag => new Date(dag * 86400000).toLocaleDateString('nl-BE', {day: 'numeric', month: 'short'});
+const schoon = t => String(t).replace(/[<>]/g, '').trim();
+
+
+/* ===== Lab-hub: klasoverzicht voor de docent =====
+   Alles blijft op dit toestel: de codes die je plakt, worden hier bewaard en nergens naartoe gestuurd. */
+const DS = HUB.sleutel + '-docent';
+let D = bewaard(DS, {klassen: [], rijen: {}, toon: ''});
+D.klassen = D.klassen || []; D.rijen = D.rijen || {};
+const onthoud = () => bewaar(DS, D);
+let melding = null;
+
+const WOORDEN = ['ZON', 'MAAN', 'STER', 'WOLK', 'BOOM', 'VOS', 'UIL', 'BERG', 'ZEE', 'WIND', 'ROOS', 'EIK'];
+function nieuweKlas(){
+  let c; do { c = WOORDEN[Math.floor(Math.random() * WOORDEN.length)] + '-' + (100 + Math.floor(Math.random() * 900)); } while(D.klassen.includes(c));
+  D.klassen.push(c); D.toon = c; onthoud(); melding = null; toon();
+}
+function voegToe(tekst){
+  const stukken = tekst.split(/\s+/).filter(x => x.startsWith('LAB1.'));
+  if(!stukken.length){ melding = ['nok', 'Geen voortgangscode gevonden. Een code begint met LAB1.']; return toon(); }
+  let goed = 0, nieuw = 0; const fout = [];
+  for(const s of stukken){
+    try {
+      const r = leesCode(s), sleutel = [r.klas, r.naam.toLowerCase(), r.pad].join('|');
+      const oud = D.rijen[sleutel];
+      if(!oud) nieuw++;
+      if(!oud || oud.dag <= r.dag) D.rijen[sleutel] = {klas: r.klas, naam: r.naam, pad: r.pad, dag: r.dag, code: s};
+      if(r.klas && !D.klassen.includes(r.klas)) D.klassen.push(r.klas);
+      goed++;
+    } catch(e){ fout.push(e.message); }
+  }
+  onthoud();
+  melding = fout.length ? ['nok', `${goed} code(s) toegevoegd, ${fout.length} niet gelezen: ${fout[0]}`] : ['ok', `${goed} code(s) gelezen: ${nieuw} nieuw, ${goed - nieuw} bijgewerkt.`];
+  toon();
+}
+const rijenVan = klas => Object.entries(D.rijen).filter(([, r]) => klas === '' || r.klas === klas)
+  .map(([k, r]) => { try { return {k, ...r, ...leesCode(r.code)}; } catch(e){ return null; } }).filter(Boolean)
+  .sort((a, b) => a.pad.localeCompare(b.pad) || a.naam.localeCompare(b.naam, 'nl'));
+
+function csv(rijen){
+  const kop = ['klas', 'schuilnaam', 'pad', 'datum', ...HUB.labs.flatMap(l => [l.naam + ' lessen', l.naam + ' haltes', l.naam + ' score %'])];
+  const regels = rijen.map(r => [r.klas, r.naam, PADNAAM[r.pad], new Date(r.dag * 86400000).toLocaleDateString('nl-BE'),
+    ...HUB.labs.flatMap(l => { const v = r.labs[l.sleutel]; return v ? [`${v.gedaan}/${v.totaal}`, `${v.haltesKlaar}/${v.haltes.length}`, v.tot ? Math.round(100 * v.goed / v.tot) : ''] : ['', '', '']; })]);
+  const t = [kop, ...regels].map(r => r.map(c => '"' + String(c).replace(/"/g, '""') + '"').join(';')).join('\r\n');
+  const a = h('a', {href: URL.createObjectURL(new Blob(['﻿' + t], {type: 'text/csv'})), download: `labs-${D.toon || 'alle-klassen'}.csv`});
+  document.body.append(a); a.click(); a.remove();
+}
+
+function cel(lab, v){
+  if(!v) return h('td', {class: 'klein'}, '–');
+  const pct = v.totaal ? Math.round(100 * v.gedaan / v.totaal) : 0;
+  return h('td', {style: `--la:${lab.accent}`}, h('div', {class: 'mini', title: v.haltes.map((x, i) => `Halte ${i + 1} ${x.naam}: ${x.klaar}/${x.n}`).join('\n')},
+    h('div', {class: 'balk'}, h('i', {style: `width:${pct}%`})), h('span', null, `${v.gedaan}/${v.totaal}`),
+    h('span', {class: 'stip', 'aria-label': `${v.haltesKlaar} van ${v.haltes.length} haltes af`}, v.haltes.map(x => h('i', {class: x.n && x.klaar === x.n ? 'af' : ''}))),
+    v.tot ? h('span', {class: 'klein'}, Math.round(100 * v.goed / v.tot) + '%') : null));
+}
+
+function toon(){
+  const rijen = rijenVan(D.toon), plak = h('textarea', {id: 'plak', placeholder: 'LAB1.…', 'aria-describedby': 'plakhulp'});
+  const delen = [
+    h('header', {class: 'top geenprint'}, h('a', {class: 'merk', href: './'}, h('i', null, HUB.labs.map(l => h('b', {style: `background:${l.accent}`}))), HUB.naam), h('a', {class: 'toplink', href: './'}, '← Naar de labs')),
+    h('h1', null, 'Klasoverzicht'),
+    h('p', {class: 'sub', style: 'margin-top:10px;max-width:68ch'}, 'Volg de voortgang van een klas of workshopgroep zonder accounts. Elke deelnemer maakt op de startpagina een voortgangscode onder een schuilnaam en bezorgt ze aan jou. Jij plakt de codes hier.'),
+    h('ol', {class: 'uitleg geenprint'},
+      h('li', null, h('b', null, 'Maak een klascode'), 'Schrijf ze op het bord. Ze dient alleen om groepen uit elkaar te houden.'),
+      h('li', null, h('b', null, 'Verzamel de codes'), 'Deelnemers kiezen “Maak mijn voortgangscode” en sturen de code door, bv. als antwoord op een opdracht in Moodle of in de chat.'),
+      h('li', null, h('b', null, 'Plak ze hier'), 'Eén of meerdere tegelijk. Een nieuwere code van dezelfde deelnemer vervangt de oude.')),
+    h('h2', {class: 'geenprint'}, 'Klassen'),
+    h('div', {class: 'tabs geenprint'},
+      h('button', {type: 'button', 'aria-pressed': String(D.toon === ''), onclick: () => { D.toon = ''; onthoud(); toon(); }}, 'Alle'),
+      D.klassen.map(k => h('button', {type: 'button', 'aria-pressed': String(D.toon === k), onclick: () => { D.toon = k; onthoud(); toon(); }}, k)),
+      h('button', {type: 'button', onclick: nieuweKlas}, '+ Nieuwe klascode')),
+    D.toon ? h('p', null, 'Klascode voor de deelnemers: ', h('span', {class: 'klascode'}, D.toon)) : null,
+    h('div', {class: 'klas geenprint', style: 'margin-top:14px'},
+      h('label', {for: 'plak'}, 'Voortgangscodes plakken', h('small', {id: 'plakhulp'}, 'Eén code per regel, of een hele tekst waarin de codes staan.'), plak),
+      h('div', {class: 'rij', style: 'margin-top:12px'}, h('button', {class: 'knop klein2', type: 'button', onclick: () => voegToe(plak.value)}, 'Voeg toe')),
+      melding ? h('div', {class: 'melding ' + melding[0], role: 'status'}, melding[1]) : null),
+    h('h2', null, D.toon ? `Voortgang van ${D.toon}` : 'Voortgang van alle klassen'),
+    h('p', {class: 'sub'}, rijen.length ? `${rijen.length} deelnemer(s). De bolletjes tonen de afgewerkte haltes, het percentage is de score op de oefeningen.` : ''),
+    h('div', {class: 'tabel'}, rijen.length ? h('table', null,
+      h('thead', null, h('tr', null, h('th', null, 'Schuilnaam'), D.toon ? null : h('th', null, 'Klas'), h('th', null, 'Pad'), HUB.labs.map(l => h('th', null, l.naam)), h('th', null, 'Code van'), h('th', {class: 'geenprint'}))),
+      h('tbody', null, rijen.map(r => h('tr', null, h('td', null, h('b', null, r.naam)), D.toon ? null : h('td', null, r.klas || '–'), h('td', null, PADNAAM[r.pad]),
+        HUB.labs.map(l => cel(l, r.labs[l.sleutel])), h('td', {class: 'klein'}, datum(r.dag)),
+        h('td', {class: 'geenprint'}, h('button', {class: 'x', type: 'button', 'aria-label': `Verwijder ${r.naam}`, onclick: () => { delete D.rijen[r.k]; onthoud(); melding = null; toon(); }}, '×'))))))
+      : h('div', {class: 'leeg'}, 'Nog geen codes. Plak hierboven de eerste voortgangscode.')),
+    rijen.length ? h('div', {class: 'rij geenprint', style: 'margin-top:14px'},
+      h('button', {class: 'knop stil klein2', type: 'button', onclick: () => csv(rijen)}, 'Download als CSV (Excel)'),
+      h('button', {class: 'knop stil klein2', type: 'button', onclick: () => window.print()}, 'Afdrukken'),
+      h('button', {class: 'knop stil klein2', type: 'button', onclick: () => { if(!confirm(D.toon ? `Alle gegevens van ${D.toon} wissen?` : 'Alle gegevens van alle klassen wissen?')) return;
+        for(const r of rijen) delete D.rijen[r.k]; if(D.toon){ D.klassen = D.klassen.filter(k => k !== D.toon); D.toon = ''; } else D.klassen = []; onthoud(); melding = null; toon(); }}, D.toon ? 'Wis deze klas' : 'Wis alles')) : null,
+    h('footer', null, 'Privacy: deze pagina bewaart de geplakte codes alleen in deze browser, op dit toestel. Er wordt niets naar een server gestuurd. Een code bevat een klascode, een schuilnaam, het pad, een datum en per lab de afgewerkte lessen en de score. Vraag deelnemers om een schuilnaam te kiezen die alleen jij herkent. Een code is niet beveiligd tegen vervalsen: gebruik het overzicht om op te volgen, niet om punten te geven.')
+  ];
+  $('#app').replaceChildren(...delen.filter(Boolean));
+}
+toon();
+</script>
